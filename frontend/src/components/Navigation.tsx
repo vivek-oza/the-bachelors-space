@@ -23,13 +23,16 @@ export function Navigation() {
     { id: 'monthly', label: 'Monthly Plan' },
     { id: 'yearly', label: 'Yearly Plan' },
     { id: 'rules', label: 'Rules & Regulations' },
-    // { id: 'contact', label: 'Contact' }
+    { id: 'facilities', label: 'Included Facilities' },
+    { id: 'location', label: 'Location' }
   ]
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      const navHeight = 80
+      const elementPosition = element.offsetTop - navHeight
+      window.scrollTo({ top: elementPosition, behavior: 'smooth' })
       setActiveSection(sectionId)
       setIsMobileMenuOpen(false)
     }
@@ -50,10 +53,8 @@ export function Navigation() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <img src={logo} alt="Logo" className="h-14 rounded w-auto" />
-            {/* <span className={`text-xl ${isScrolled ? 'text-purple-900' : 'text-white'} font-heading`}>
-              The Bachelor's Space
-            </span> */}
+            <img src={logo} onClick={() => scrollToSection('hero')} alt="Logo" className="h-14 rounded w-auto" />
+
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -112,44 +113,27 @@ export function Navigation() {
         </div>
 
         {/* Mobile Menu */}
-        <motion.div
-          className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}
-          initial={{ opacity: 0, height: 0 }}
-          animate={{
-            opacity: isMobileMenuOpen ? 1 : 0,
-            height: isMobileMenuOpen ? 'auto' : 0
-          }}
-          transition={{ duration: 0.3 }}
-        >
-          <div className="py-4 space-y-2">
-            {navItems.map((item, index) => (
-              <motion.button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left px-4 py-2 rounded-lg transition-colors font-body ${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-gray-200 hover:bg-white/10'
-                  }`}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                whileHover={{ x: 5 }}
-              >
-                {item.label}
-              </motion.button>
-            ))}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, delay: navItems.length * 0.1 }}
-            >
+        {isMobileMenuOpen && (
+          <div className="md:hidden">
+            <div className="p-4 space-y-2 bg-white/95 backdrop-blur-md rounded-lg my-2 shadow-lg">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="block w-full text-left px-4 py-2 rounded-lg transition-colors font-body text-gray-700 hover:bg-gray-100"
+                >
+                  {item.label}
+                </button>
+              ))}
               <Button
                 onClick={() => scrollToSection('apply')}
-                className="w-full mt-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 font-body"
+                className="w-full mt-2 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-purple-900 px-6 py-2 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 font-body"
               >
-                Apply Now
+                Contact
               </Button>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        )}
       </div>
     </motion.nav>
   )
