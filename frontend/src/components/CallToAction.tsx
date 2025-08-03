@@ -2,7 +2,10 @@
 
 import { motion } from 'motion/react'
 import { Button } from './ui/button'
-
+import img2 from '../assets/2.png'
+import img4 from '../assets/4.png'
+import img6 from '../assets/6.png'
+import img9 from '../assets/9.png'
 
 import { 
   Send, 
@@ -54,8 +57,40 @@ export function CallToAction() {
   }
 
   return (
-    <section id="apply" className="py-20 bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="apply" className="relative py-20 bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 overflow-hidden">
+      {/* Scattered Images */}
+      <div className="absolute inset-0 pointer-events-none z-5 hidden md:block">
+        <motion.img
+          src={img2}
+          alt=""
+          className="absolute top-16 left-16 w-16 h-16 opacity-50"
+          animate={{ rotate: [0, 10, -10, 0], y: [0, -5, 5, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.img
+          src={img4}
+          alt=""
+          className="absolute top-24 right-20 w-20 h-20 opacity-40"
+          animate={{ rotate: [0, -15, 15, 0], scale: [1, 1.1, 1] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        />
+        <motion.img
+          src={img6}
+          alt=""
+          className="absolute top-1/2 left-8 w-14 h-14 opacity-60"
+          animate={{ rotate: [0, 20, -20, 0], x: [0, 10, -10, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        />
+        <motion.img
+          src={img9}
+          alt=""
+          className="absolute top-2/3 right-12 w-18 h-18 opacity-45"
+          animate={{ rotate: [0, -10, 10, 0], y: [0, 8, -8, 0] }}
+          transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        />
+      </div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
           className="text-center mb-16"
@@ -70,7 +105,7 @@ export function CallToAction() {
           </div>
           <h2 className="text-4xl md:text-6xl text-white mb-6 font-heading">
             Ready to Join Our
-            <span className="block bg-gradient-to-r from-yellow-400 to-teal-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-yellow-400 to-teal-400 bg-clip-text text-transparent font-serif italic py-2">
               Community?
             </span>
           </h2>
@@ -79,9 +114,9 @@ export function CallToAction() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-1 gap-12 mb-16">
           {/* Application Form */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -186,7 +221,7 @@ export function CallToAction() {
                 </form>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
 
           {/* Contact Info & Stats */}
           <motion.div
@@ -205,15 +240,19 @@ export function CallToAction() {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-teal-500" />
-                  <span className="text-gray-700 font-body">+91 98765 43210</span>
+                  <span className="text-gray-700 font-body">+91 82009 64448</span>
                 </div>
                 <div className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-teal-500" />
+                  <span className="text-gray-700 font-body">+91 88669 64448</span>
+                </div>
+                {/* <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-cyan-500" />
                   <span className="text-gray-700 font-body">info@bachelorsspace.com</span>
-                </div>
+                </div> */}
                 <div className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-pink-500" />
-                  <span className="text-gray-700 font-body">Bachelor's Space, Student Area</span>
+                  <span className="text-gray-700 font-body">Nr. Siddhraj Z+, Opp. Aashka Hospital, Reliance Cross Road, Gandhinagar.</span>
                 </div>
               </div>
             </div>

@@ -115,8 +115,7 @@ This project is configured for seamless deployment on Vercel:
 
 For accommodation inquiries:
 - Phone: +91 98765 43210
-- Email: info@bachelorsspace.com
-- Location: Bachelor's Space, Student Area
+- Location: Nr. Siddhraj Z+, Opp. Aashka Hospital,Reliance Cross Road, Gandhinagar.
 
 ## 🏆 Why Choose Us?
 
