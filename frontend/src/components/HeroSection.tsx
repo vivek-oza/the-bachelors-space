@@ -4,6 +4,9 @@ import { motion } from 'motion/react'
 import { Button } from './ui/button'
 import { Sparkles, Zap, Heart } from 'lucide-react'
 import heroImage from '../assets/sub_hero_banner.png'
+import heroBgImage from '../assets/Hero/hero_image.png'
+import heroBgImageTablet from '../assets/Hero/hero_image_tablet.png'
+import heroBgImagePhone from '../assets/Hero/hero_image_phone.png'
 import img2 from '../assets/2.png'
 import img4 from '../assets/4.png'
 import img6 from '../assets/6.png'
@@ -11,10 +14,29 @@ import img9 from '../assets/9.png'
 
 export function HeroSection() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900" style={{ 
+        backgroundImage: `url(${heroBgImagePhone})`,
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center', 
+        backgroundRepeat: 'no-repeat'
+      }}>
+      <style>{`
+        @media (min-width: 768px) {
+          #hero {
+            background-image: url(${heroBgImageTablet}) !important;
+          }
+        }
+        @media (min-width: 1024px) {
+          #hero {
+            background-image: url(${heroBgImage}) !important;
+          }
+        }
+      `}</style>
+      {/* Background overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 via-indigo-900/70 to-blue-900/80"></div>
       {/* Grid Background Effect */}
-      <div className="absolute inset-0 h-full w-full bg-[linear-gradient(to_right,#ffffff20_1px,transparent_1px),linear-gradient(to_bottom,#ffffff20_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(circle_at_50%_20%,black_20%,transparent_40%)]"></div>
-      
+      {/* <div className="absolute inset-0 h-full w-full bg-[linear-gradient(to_right,#ffffff20_1px,transparent_1px),linear-gradient(to_bottom,#ffffff20_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(circle_at_50%_20%,black_20%,transparent_40%)]"></div> */}
+
       {/* Enhanced Background Elements with micro-interactions */}
       <div className="absolute inset-0 overflow-hidden">
 
@@ -63,7 +85,7 @@ export function HeroSection() {
 
       {/* Floating decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
-        
+
         <motion.div
           className="absolute bottom-40 left-32"
           animate={{
@@ -112,7 +134,7 @@ export function HeroSection() {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:pt-44 ">
         <div className="grid lg:grid-cols-1 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8 py-14 flex flex-col">
@@ -188,23 +210,12 @@ export function HeroSection() {
                     </motion.span>
                   </Button>
                 </motion.div>
-                {/* <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-2 border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-purple-900 px-8 py-4 rounded-2xl font-medium text-lg transition-all duration-300 backdrop-blur-sm font-body"
-                  >
-                    Contact Us
-                  </Button>
-                </motion.div> */}
               </motion.div>
-            </div></div>
+            </div>
+          </div>
 
           {/* Right Content - Hero Image */}
-          <motion.div
+          {/* <motion.div
             className="relative"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -217,12 +228,10 @@ export function HeroSection() {
                 className="w-full h-auto max-h-[450px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
-
-
             </div>
-          </motion.div>
+          </motion.div> */}
           {/* Floating stats overlay */}
-          <motion.div
+          {/* <motion.div
             className=""
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -247,7 +256,7 @@ export function HeroSection() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>

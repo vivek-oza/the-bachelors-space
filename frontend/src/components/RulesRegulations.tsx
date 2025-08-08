@@ -17,7 +17,14 @@ import {
 } from 'lucide-react'
 import { useState } from 'react'
 
-const yearlyRules = [
+interface Rule {
+  icon: any;
+  title: string;
+  content: string;
+  type: string;
+}
+
+const yearlyRules: Rule[] = [
   {
     icon: Calendar,
     title: 'Fee Collection',
@@ -56,7 +63,7 @@ const yearlyRules = [
   }
 ]
 
-const monthlyRules = [
+const monthlyRules: Rule[] = [
   {
     icon: Clock,
     title: 'Payment Due Date',
@@ -258,27 +265,7 @@ export function RulesRegulations() {
           </motion.div>
         </div>
 
-        {/* Important Notice */}
-        <motion.div
-          className="mt-12 bg-gradient-to-r from-pink-50 to-purple-50 border border-pink-200 rounded-3xl p-8"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="flex items-start gap-4">
-            <AlertTriangle className="w-8 h-8 text-pink-500 flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl text-purple-900 mb-3 font-heading">Important Notice</h3>
-              <p className="text-gray-700 mb-2 font-body">
-                All residents must sign an agreement to the hostel's terms and conditions before check-in.
-              </p>
-              <p className="text-gray-700 font-body">
-                Fees are <strong>non-refundable</strong> except for security deposits as per the above policies.
-              </p>
-            </div>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   )
