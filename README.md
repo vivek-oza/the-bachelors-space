@@ -1,6 +1,8 @@
-# The Bachelor's Space
+# The Bachelor's Space v2.0
 
 A modern, responsive hostel accommodation website offering flexible yearly and monthly plans for students and working professionals.
+
+> **Version 2.0** - Enhanced with improved animations, better responsive design, and optimized performance.
 
 ## 🏠 Features
 

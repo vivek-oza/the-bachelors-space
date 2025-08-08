@@ -20,7 +20,7 @@ export function HeroSection() {
         backgroundPosition: 'center', 
         backgroundRepeat: 'no-repeat'
       }}>
-      <style jsx>{`
+      <style>{`
         @media (min-width: 768px) {
           #hero {
             background-image: url(${heroBgImageTablet}) !important;
