@@ -3,6 +3,7 @@
 import { Navigation } from './components/Navigation'
 import { HeroSection } from './components/HeroSection'
 import { ImageCarousel } from './components/ImageCarousel'
+import { MarqueeSection } from './components/MarqueeSection'
 import { YearlyPlans } from './components/YearlyPlans'
 import { MonthlyPlans } from './components/MonthlyPlans'
 import { RulesRegulations } from './components/RulesRegulations'
@@ -25,6 +26,9 @@ export default function App() {
 
       {/* Hero Section */}
       <HeroSection />
+
+      {/* Marquee Section */}
+      <MarqueeSection />
 
       {/* Image Carousel */}
       <ImageCarousel />
@@ -112,17 +116,17 @@ export default function App() {
         </div>
       </section>
 
-      {/* Monthly Plans */}
+      {/* Facilities & Payment */}
+      <FacilitiesPayment />
 
+      {/* Monthly Plans */}
       <MonthlyPlans />
+      
       {/* Yearly Plans */}
       <YearlyPlans />
 
       {/* Rules & Regulations */}
       <RulesRegulations />
-
-      {/* Facilities & Payment */}
-      <FacilitiesPayment />
 
       {/* Call to Action */}
       <CallToAction />
