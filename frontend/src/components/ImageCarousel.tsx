@@ -5,13 +5,14 @@ import { motion, AnimatePresence } from 'motion/react'
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react'
 
 // Import carousel images
-import img1 from '../assets/Carousel/1.jpg'
-import img2 from '../assets/Carousel/2.jpg'
-import img3 from '../assets/Carousel/3.jpg'
-import img4 from '../assets/Carousel/4.jpg'
-import img5 from '../assets/Carousel/5.jpg'
-import img6 from '../assets/Carousel/6.jpg'
-import img7 from '../assets/Carousel/7.jpg'
+import img1 from '../assets/Carousel/1.webp'
+import img2 from '../assets/Carousel/2.webp'
+import img3 from '../assets/Carousel/3.webp'
+import img4 from '../assets/Carousel/4.webp'
+import img5 from '../assets/Carousel/5.webp'
+import img6 from '../assets/Carousel/6.webp'
+import img7 from '../assets/Carousel/7.webp'
+import img8 from '../assets/Carousel/8.webp'
 
 const carouselImages = [
   { src: img1, aspectRatio: 'horizontal' },
@@ -20,7 +21,8 @@ const carouselImages = [
   { src: img4, aspectRatio: 'vertical' },
   { src: img5, aspectRatio: 'vertical' },
   { src: img6, aspectRatio: 'vertical' },
-  { src: img7, aspectRatio: 'vertical' }
+  { src: img7, aspectRatio: 'vertical' },
+  { src: img8, aspectRatio: 'vertical' }
 ]
 
 export function ImageCarousel() {

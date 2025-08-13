@@ -20,10 +20,12 @@ export function Navigation() {
   }, [])
 
   const navItems = [
+    { id: 'facilities', label: 'Included Facilities' },
+    { id: 'nearby', label: 'Nearby' },
     { id: 'monthly', label: 'Monthly Plan' },
     { id: 'yearly', label: 'Yearly Plan' },
-    { id: 'rules', label: 'Rules & Regulations' },
-    { id: 'facilities', label: 'Included Facilities' },
+    { id: 'payment', label: 'Payment Method' },
+    // { id: 'rules', label: 'Rules & Regulations' },
     { id: 'location', label: 'Location' }
   ]
 
@@ -49,7 +51,7 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <motion.div
-            className="flex items-center gap-3"
+            className="flex cursor-pointer items-center gap-3"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -63,7 +65,7 @@ export function Navigation() {
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-all duration-200 relative font-body ${activeSection === item.id
+                className={`text-sm cursor-pointer font-medium transition-all duration-200 relative font-body ${activeSection === item.id
                   ? (isScrolled ? 'text-yellow-500' : 'text-yellow-400')
                   : (isScrolled ? 'text-gray-700 hover:text-yellow-500' : 'text-gray-200 hover:text-yellow-400')
                   }`}

@@ -8,6 +8,9 @@ import { YearlyPlans } from './components/YearlyPlans'
 import { MonthlyPlans } from './components/MonthlyPlans'
 import { RulesRegulations } from './components/RulesRegulations'
 import { FacilitiesPayment } from './components/FacilitiesPayment'
+import { PaymentMethods } from './components/PaymentMethods'
+import { Branches } from './components/Branches'
+import { NearbyInstitutions } from './components/NearbyInstitutions'
 import { CallToAction } from './components/CallToAction'
 import { Toaster } from './components/ui/sonner'
 import { motion } from 'motion/react'
@@ -30,8 +33,15 @@ export default function App() {
       {/* Marquee Section */}
       <MarqueeSection />
 
+      {/* Facilities */}
+      <FacilitiesPayment />
+
+      {/* Nearby Colleges & Universities */}
+      <NearbyInstitutions />
+      
       {/* Image Carousel */}
       <ImageCarousel />
+
 
       {/* About Us */}
       <section className="py-20 bg-gradient-to-br from-purple-50 via-blue-50 to-teal-50">
@@ -116,8 +126,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Facilities & Payment */}
-      <FacilitiesPayment />
 
       {/* Monthly Plans */}
       <MonthlyPlans />
@@ -126,44 +134,19 @@ export default function App() {
       <YearlyPlans />
 
       {/* Rules & Regulations */}
-      <RulesRegulations />
+      {/* <RulesRegulations /> */}
+
+      
+      {/* Payment Methods & Extra Services */}
+      <PaymentMethods />
+      
 
       {/* Call to Action */}
       <CallToAction />
 
-      {/* Location Map */}
-      <section id="location" className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Find Us</h2>
-            <p className="text-gray-600 text-lg">Visit us at our convenient location in Gandhinagar</p>
-          </motion.div>
-          <motion.div
-            className="rounded-2xl overflow-hidden shadow-2xl"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.666097938312!2d72.6200995742735!3d23.18238371034744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c2b0042f351db%3A0x3ad6718fda18d7ef!2sThe%20Bachelor&#39;s%20Space%20-%20HOSTEL%20%26%20PG%20-%20Sargasan%2C%20Gandhinagar!5e0!3m2!1sen!2sin!4v1754192730866!5m2!1sen!2sin"
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full"
-            />
-          </motion.div>
-        </div>
-      </section>
+      {/* Branch Locations */}
+      <Branches />
+
 
       {/* Enhanced Footer */}
       <footer className="bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 text-white py-16 relative overflow-hidden">
@@ -283,9 +266,10 @@ export default function App() {
                 {[
                   { href: '#monthly', label: 'Monthly Plan', color: 'hover:text-yellow-400' },
                   { href: '#yearly', label: 'Yearly Plan', color: 'hover:text-teal-400' },
-                  { href: '#rules', label: 'Rules & Regulations', color: 'hover:text-cyan-400' },
+                  { href: '#payment', label: 'Payment Method', color: 'hover:text-amber-400' },
+                  { href: '#nearby', label: 'Nearby', color: 'hover:text-purple-300' },
                   { href: '#facilities', label: 'Included Facilities', color: 'hover:text-pink-400' },
-                  { href: '#location', label: 'Location', color: 'hover:text-blue-400' },
+                  { href: '#location', label: 'Locations', color: 'hover:text-blue-400' },
                   { href: '#apply', label: 'Contact', color: 'hover:text-green-400' }
                 ].map((link, index) => (
                   <motion.li
@@ -312,11 +296,12 @@ export default function App() {
               <h4 className="font-medium mb-4 text-xl font-heading">Contact Info</h4>
               <ul className="space-y-3 text-gray-300">
                 {[
+                  'Branch 1:',
                   '+91 82009 64448',
                   '+91 88669 64448',
-                  // 'info@bachelorsspace.com',
-                  'Nr. Siddhraj Z+, Opp. Aashka Hospital,',
-                  'Reliance Cross Road, Gandhinagar.'
+                  'Branch 2:',
+                  '+91 88669 60171',
+                  '+91 88669 60176'
                 ].map((contact, index) => (
                   <motion.li
                     key={contact}

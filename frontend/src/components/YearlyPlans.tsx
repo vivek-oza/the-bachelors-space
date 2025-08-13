@@ -204,12 +204,12 @@ export function YearlyPlans() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <p className="text-purple-900 mb-4 font-body">
+          <p className="text-purple-900 font-body">
             <strong>Security deposit refundable post checkout.</strong> Fees include everything you need for a peaceful stay.
           </p>
-          <p className="text-sm text-gray-600 font-body">
+          {/* <p className="text-sm text-gray-600 font-body">
             Additional charges may apply for extra laundry, transport, or electricity.
-          </p>
+          </p> */}
         </motion.div>
       </div>
     </section>

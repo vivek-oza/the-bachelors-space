@@ -165,7 +165,7 @@ export function MonthlyPlans() {
         </div>
 
         {/* Additional Info */}
-        <motion.div
+        {/* <motion.div
           className="bg-gradient-to-r from-pink-50 to-purple-50 border border-pink-200 rounded-3xl p-8 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -178,7 +178,7 @@ export function MonthlyPlans() {
           <p className="text-sm text-gray-600 font-body">
             Rent due on 1st, ₹500/day late fee applies. Extra charges for additional laundry, transport, or individual electricity.
           </p>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   )

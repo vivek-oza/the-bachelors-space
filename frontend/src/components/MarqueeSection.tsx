@@ -8,7 +8,7 @@ export function MarqueeSection() {
   const images = [marquee1, marquee2]
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <section className="py-5 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           className="text-center mb-16"
@@ -25,12 +25,9 @@ export function MarqueeSection() {
             <span className="text-lg">🏢</span>
             <span className="font-medium font-body">Our Facilities</span>
           </motion.div>
-          <h2 className="text-4xl md:text-6xl text-purple-900 mb-6 font-heading">
+          <h2 className="text-4xl md:text-4xl text-purple-900 mb-6 font-heading">
             Modern Living Spaces
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-body">
-            Take a glimpse into our state-of-the-art hostel facilities designed for your comfort and convenience
-          </p>
         </motion.div>
 
         <div className="relative">
@@ -41,29 +38,29 @@ export function MarqueeSection() {
                 x: [0, -50 + '%']
               }}
               transition={{
-                duration: 20,
+                duration: 70,
                 repeat: Infinity,
                 ease: "linear"
               }}
             >
-              {[...images, ...images, ...images, ...images].map((image, index) => (
+              {[...images, ...images, ...images, ...images, ...images, ...images].map((image, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 w-screen"
+                  className="flex-shrink-0  h-34"
                 >
                   <img
                     src={image}
                     alt={`Hostel facility ${(index % 2) + 1}`}
-                    className="w-full h-full ps-12 object-cover"
+                    className="w-full h-full ps-10 object-cover"
                   />
                 </div>
               ))}
             </motion.div>
           </div>
           {/* Left gradient overlay */}
-          <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
+          <div className="absolute left-0 top-0 w-8 md:w-24 h-full bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
           {/* Right gradient overlay */}
-          <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
+          <div className="absolute right-0 top-0 w-8 md:w-24 h-full bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
         </div>
       </div>
     </section>

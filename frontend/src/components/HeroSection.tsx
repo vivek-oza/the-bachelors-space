@@ -3,10 +3,9 @@
 import { motion } from 'motion/react'
 import { Button } from './ui/button'
 import { Sparkles, Zap, Heart } from 'lucide-react'
-import heroImage from '../assets/sub_hero_banner.png'
-import heroBgImage from '../assets/Hero/hero_image.png'
-import heroBgImageTablet from '../assets/Hero/hero_image_tablet.png'
-import heroBgImagePhone from '../assets/Hero/hero_image_phone.png'
+import heroBgImage from '../assets/Hero/hero_image.webp'
+import heroBgImageTablet from '../assets/Hero/hero_image_tablet.webp'
+import heroBgImagePhone from '../assets/Hero/hero_image_phone.webp'
 import img2 from '../assets/2.png'
 import img4 from '../assets/4.png'
 import img6 from '../assets/6.png'
@@ -33,7 +32,7 @@ export function HeroSection() {
         }
       `}</style>
       {/* Background overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 via-indigo-900/70 to-blue-900/80"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/70 via-indigo-900/70 to-blue-900/70"></div>
       {/* Grid Background Effect */}
       {/* <div className="absolute inset-0 h-full w-full bg-[linear-gradient(to_right,#ffffff20_1px,transparent_1px),linear-gradient(to_bottom,#ffffff20_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(circle_at_50%_20%,black_20%,transparent_40%)]"></div> */}
 
@@ -98,7 +97,7 @@ export function HeroSection() {
             ease: "easeInOut"
           }}
         >
-          <Heart className="w-7 h-7 text-pink-400 opacity-60" />
+        <Heart className="w-7 h-7 text-pink-400 opacity-60" />
         </motion.div>
       </div>
 

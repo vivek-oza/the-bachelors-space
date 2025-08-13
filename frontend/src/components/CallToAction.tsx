@@ -232,27 +232,46 @@ export function CallToAction() {
             viewport={{ once: true }}
           >
             {/* Contact Information */}
-            <div className="bg-white/95 backdrop-blur rounded-2xl shadow-lg p-6">
-              <div className="flex items-center gap-3 text-xl text-purple-900 font-heading mb-4">
-                <Phone className="w-5 h-5 text-teal-500" />
-                Contact Information
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white/95 backdrop-blur rounded-2xl shadow-lg p-6">
+                <div className="flex items-center gap-3 text-xl text-purple-900 font-heading mb-4">
+                  <Phone className="w-5 h-5 text-teal-500" />
+                  Branch 1 Contact
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-teal-500" />
+                    <span className="text-gray-700 font-body">+91 82009 64448</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-teal-500" />
+                    <span className="text-gray-700 font-body">+91 88669 64448</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-pink-500 mt-1" />
+                    <span className="text-gray-700 font-body">Sanskruti Signius, Nr Siddhraj Z+, Opp. Aashka Hospital, Reliance Cross Road, Sargasan, Gandhinagar, Gujarat 382421</span>
+                  </div>
+                </div>
               </div>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
+
+              <div className="bg-white/95 backdrop-blur rounded-2xl shadow-lg p-6">
+                <div className="flex items-center gap-3 text-xl text-purple-900 font-heading mb-4">
                   <Phone className="w-5 h-5 text-teal-500" />
-                  <span className="text-gray-700 font-body">+91 82009 64448</span>
+                  Branch 2 Contact
                 </div>
-                <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-teal-500" />
-                  <span className="text-gray-700 font-body">+91 88669 64448</span>
-                </div>
-                {/* <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-cyan-500" />
-                  <span className="text-gray-700 font-body">info@bachelorsspace.com</span>
-                </div> */}
-                <div className="flex items-center gap-3">
-                  <MapPin className="w-5 h-5 text-pink-500" />
-                  <span className="text-gray-700 font-body">Nr. Siddhraj Z+, Opp. Aashka Hospital, Reliance Cross Road, Gandhinagar.</span>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-teal-500" />
+                    <span className="text-gray-700 font-body">+91 88669 60171</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-teal-500" />
+                    <span className="text-gray-700 font-body">+91 88669 60176</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-pink-500 mt-1" />
+                    <span className="text-gray-700 font-body">5th Floor, Pramukh Avenue, Above Kishor Institute, Near Zudio, Reliance Cross Road, Sargasan, Gandhinagar - 382421</span>
+                  </div>
                 </div>
               </div>
             </div>
