@@ -20,6 +20,7 @@ import img2 from './assets/2.png'
 import img4 from './assets/4.png'
 import img6 from './assets/6.png'
 import img9 from './assets/9.png'
+import { BranchesCreative } from './components/BranchesCreative'
 
 export default function App() {
   return (
@@ -155,7 +156,6 @@ export default function App() {
       {/* Rules & Regulations */}
       {/* <RulesRegulations /> */}
 
-      
       {/* Payment Methods & Extra Services */}
       <PaymentMethods />
       
@@ -166,6 +166,7 @@ export default function App() {
       {/* Branch Locations */}
       <Branches />
 
+      <BranchesCreative />
 
       {/* Enhanced Footer */}
       <footer className="bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 text-white py-16 relative overflow-hidden">

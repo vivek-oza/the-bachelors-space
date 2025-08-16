@@ -8,100 +8,199 @@ import { Button } from './ui/button'
 import { GraduationCap, MapPin, Star, Users, BookOpen, Award } from 'lucide-react'
 import { useIsMobile } from './ui/use-mobile'
 
+// const institutions = [
+//   {
+//     name: 'IIT Gandhinagar',
+//     type: 'Engineering',
+//     distance: '2.5 km',
+//     icon: Award,
+//     color: 'from-yellow-400 to-yellow-600'
+//   },
+//   {
+//     name: 'Central University of Gujarat',
+//     type: 'University',
+//     distance: '3.2 km',
+//     icon: GraduationCap,
+//     color: 'from-blue-400 to-blue-600'
+//   },
+//   {
+//     name: 'Dhirubhai Ambani Institute of ICT',
+//     type: 'Technology',
+//     distance: '4.1 km',
+//     icon: BookOpen,
+//     color: 'from-purple-400 to-purple-600'
+//   },
+//   {
+//     name: 'Gujarat Forensic Sciences University',
+//     type: 'Specialized',
+//     distance: '3.8 km',
+//     icon: Users,
+//     color: 'from-teal-400 to-teal-600'
+//   },
+//   {
+//     name: 'National Institute of Design',
+//     type: 'Design',
+//     distance: '5.2 km',
+//     icon: Star,
+//     color: 'from-pink-400 to-pink-600'
+//   },
+//   {
+//     name: 'NIFT Gandhinagar',
+//     type: 'Fashion',
+//     distance: '4.7 km',
+//     icon: Award,
+//     color: 'from-cyan-400 to-cyan-600'
+//   },
+//   {
+//     name: 'Pandit Deendayal Energy University',
+//     type: 'Energy',
+//     distance: '6.1 km',
+//     icon: BookOpen,
+//     color: 'from-green-400 to-green-600'
+//   },
+//   {
+//     name: 'Rashtriya Raksha University',
+//     type: 'Security',
+//     distance: '7.3 km',
+//     icon: Users,
+//     color: 'from-red-400 to-red-600'
+//   },
+//   {
+//     name: 'Karnavati University',
+//     type: 'Private',
+//     distance: '5.8 km',
+//     icon: GraduationCap,
+//     color: 'from-indigo-400 to-indigo-600'
+//   },
+//   {
+//     name: 'Gujarat Technological University',
+//     type: 'Technology',
+//     distance: '4.3 km',
+//     icon: BookOpen,
+//     color: 'from-orange-400 to-orange-600'
+//   },
+//   {
+//     name: 'Gujarat National Law University',
+//     type: 'Law',
+//     distance: '6.7 km',
+//     icon: Award,
+//     color: 'from-violet-400 to-violet-600'
+//   },
+//   {
+//     name: 'Swaminarayan University',
+//     type: 'Private',
+//     distance: '8.2 km',
+//     icon: GraduationCap,
+//     color: 'from-amber-400 to-amber-600'
+//   }
+// ]
+
 const institutions = [
   {
     name: 'IIT Gandhinagar',
     type: 'Engineering',
-    distance: '2.5 km',
-    category: 'Premier',
-    icon: Award,
+    distance: '10 km',
+    icon: GraduationCap,
     color: 'from-yellow-400 to-yellow-600'
   },
   {
     name: 'Central University of Gujarat',
     type: 'University',
-    distance: '3.2 km',
-    category: 'Central',
+    distance: '8 km',
     icon: GraduationCap,
     color: 'from-blue-400 to-blue-600'
   },
   {
     name: 'Dhirubhai Ambani Institute of ICT',
     type: 'Technology',
-    distance: '4.1 km',
-    category: 'Premier',
-    icon: BookOpen,
+    distance: '1 km',
+    icon: GraduationCap,
     color: 'from-purple-400 to-purple-600'
   },
   {
     name: 'Gujarat Forensic Sciences University',
     type: 'Specialized',
-    distance: '3.8 km',
-    category: 'State',
-    icon: Users,
+    distance: '5 km',
+    icon: GraduationCap,
     color: 'from-teal-400 to-teal-600'
   },
   {
     name: 'National Institute of Design',
     type: 'Design',
-    distance: '5.2 km',
-    category: 'National',
-    icon: Star,
+    distance: '1 km',
+    icon: GraduationCap,
     color: 'from-pink-400 to-pink-600'
   },
   {
     name: 'NIFT Gandhinagar',
     type: 'Fashion',
-    distance: '4.7 km',
-    category: 'National',
-    icon: Award,
+    distance: '1 km',
+    icon: GraduationCap,
     color: 'from-cyan-400 to-cyan-600'
   },
   {
     name: 'Pandit Deendayal Energy University',
     type: 'Energy',
-    distance: '6.1 km',
-    category: 'State',
-    icon: BookOpen,
+    distance: '6 km',
+    icon: GraduationCap,
     color: 'from-green-400 to-green-600'
   },
   {
     name: 'Rashtriya Raksha University',
     type: 'Security',
-    distance: '7.3 km',
-    category: 'Central',
-    icon: Users,
+    distance: '30 km',
+    icon: GraduationCap,
     color: 'from-red-400 to-red-600'
   },
   {
     name: 'Karnavati University',
     type: 'Private',
-    distance: '5.8 km',
-    category: 'Private',
+    distance: '5 km',
     icon: GraduationCap,
     color: 'from-indigo-400 to-indigo-600'
   },
   {
     name: 'Gujarat Technological University',
     type: 'Technology',
-    distance: '4.3 km',
-    category: 'State',
-    icon: BookOpen,
+    distance: '12 km',
+    icon: GraduationCap,
     color: 'from-orange-400 to-orange-600'
   },
   {
     name: 'Gujarat National Law University',
     type: 'Law',
-    distance: '6.7 km',
-    category: 'State',
-    icon: Award,
+    distance: '6 km',
+    icon: GraduationCap,
     color: 'from-violet-400 to-violet-600'
   },
   {
     name: 'Swaminarayan University',
     type: 'Private',
-    distance: '8.2 km',
-    category: 'Private',
+    distance: '15 km',
+    icon: GraduationCap,
+    color: 'from-amber-400 to-amber-600'
+  },
+  {
+    name: 'LDRP Institute of Technology',
+    distance: '8 km',
+    icon: GraduationCap,
+    color: 'from-amber-400 to-amber-600'
+  },
+  {
+    name: 'Government Engineering College',
+    distance: '10 km',
+    icon: GraduationCap,
+    color: 'from-amber-400 to-amber-600'
+  },
+  {
+    name: 'Kadi Sarva Vishwavidyalaya',
+    distance: '8 km',
+    icon: GraduationCap,
+    color: 'from-amber-400 to-amber-600'
+  },
+  {
+    name: 'Government Polytechnic',
+    distance: '10 km',
     icon: GraduationCap,
     color: 'from-amber-400 to-amber-600'
   }
@@ -110,21 +209,14 @@ const institutions = [
 export function NearbyInstitutions() {
   const [query, setQuery] = useState('')
   const [showAll, setShowAll] = useState(false)
-  const [selectedCategory, setSelectedCategory] = useState('All')
   const isMobile = useIsMobile()
 
-  const categories = ['All', 'Premier', 'Central', 'State', 'National', 'Private']
-
   const normalizedQuery = query.trim().toLowerCase()
-  const categoryFiltered = selectedCategory === 'All' 
-    ? institutions 
-    : institutions.filter(inst => inst.category === selectedCategory)
-  
   const filtered = normalizedQuery
-    ? categoryFiltered.filter((inst) => inst.name.toLowerCase().includes(normalizedQuery))
-    : categoryFiltered
+    ? institutions.filter((inst) => inst.name.toLowerCase().includes(normalizedQuery))
+    : institutions
 
-  const initialCount = isMobile ? 6 : 8
+  const initialCount = isMobile ? 6 : 6
   const visible = showAll || normalizedQuery ? filtered : filtered.slice(0, initialCount)
 
   return (
@@ -154,44 +246,19 @@ export function NearbyInstitutions() {
         </motion.div>
 
         <div className="max-w-4xl mx-auto mb-12">
-          <div className="flex flex-col gap-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <input
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search institutions by name..."
-                className="w-full p-4 rounded-2xl border border-purple-200 bg-white text-purple-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:border-transparent shadow-lg font-body"
-              />
-            </motion.div>
-
-            <motion.div
-              className="flex flex-wrap gap-2 justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              {categories.map((category) => (
-                <Button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  variant={selectedCategory === category ? "default" : "outline"}
-                  className={`rounded-full px-4 py-2 font-body transition-all duration-300 ${
-                    selectedCategory === category
-                      ? 'bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-lg'
-                      : 'border-purple-200 text-purple-700 hover:bg-purple-50'
-                  }`}
-                >
-                  {category}
-                </Button>
-              ))}
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <input
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search institutions by name..."
+              className="w-full p-4 rounded-2xl border border-purple-200 bg-white text-purple-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:border-transparent shadow-lg font-body"
+            />
+          </motion.div>
         </div>
 
         {visible.length === 0 ? (
@@ -220,11 +287,6 @@ export function NearbyInstitutions() {
                         <div className={`p-3 rounded-xl bg-gradient-to-r ${institution.color} shadow-lg`}>
                           <IconComponent className="w-6 h-6 text-white" />
                         </div>
-                        <Badge 
-                          className="bg-purple-100 text-purple-700 border-0 px-2 py-1 text-xs"
-                        >
-                          {institution.category}
-                        </Badge>
                       </div>
                       
                       <h3 className="text-lg font-heading text-purple-900 mb-2 group-hover:text-purple-700 transition-colors">
