@@ -1,18 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
-
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
   --font-size: 16px;
-  --neon-orange: #FF5722;
-  --deep-black: #0A0A0A;
+  --neon-orange: #ff5722;
+  --deep-black: #0a0a0a;
   --pure-black: #000000;
-  --soft-white: #FAFAFA;
-  --gradient-orange: linear-gradient(135deg, #FF5722 0%, #FF7043 100%);
-  --gradient-dark: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+  --soft-white: #fafafa;
+  --gradient-orange: linear-gradient(135deg, #ff5722 0%, #ff7043 100%);
+  --gradient-dark: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
 
   --background: var(--soft-white);
   --foreground: var(--deep-black);
@@ -120,11 +119,14 @@
 
   @keyframes orbit {
     0% {
-      transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+      transform: rotate(calc(var(--angle) * 1deg))
+        translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
     }
 
     100% {
-      transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));
+      transform: rotate(calc(var(--angle) * 1deg + 360deg))
+        translateY(calc(var(--radius) * 1px))
+        rotate(calc((var(--angle) * -1deg) - 360deg));
     }
   }
 }
@@ -136,17 +138,17 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     overflow-x: hidden;
   }
 
   .serif-font {
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
   }
 
   .italic-modern {
     font-style: italic;
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
   }
 }
 
@@ -159,56 +161,56 @@
       font-size: 3.5rem;
       font-weight: 700;
       line-height: 1.2;
-      font-family: 'Playfair Display', serif;
+      font-family: "Playfair Display", serif;
     }
 
     h2 {
       font-size: 2.5rem;
       font-weight: 600;
       line-height: 1.3;
-      font-family: 'Playfair Display', serif;
+      font-family: "Playfair Display", serif;
     }
 
     h3 {
       font-size: 2rem;
       font-weight: 600;
       line-height: 1.4;
-      font-family: 'Playfair Display', serif;
+      font-family: "Playfair Display", serif;
     }
 
     h4 {
       font-size: 1.5rem;
       font-weight: 600;
       line-height: 1.4;
-      font-family: 'Playfair Display', serif;
+      font-family: "Playfair Display", serif;
     }
 
     p {
       font-size: 1.125rem;
       font-weight: 400;
       line-height: 1.6;
-      font-family: 'Inter', sans-serif;
+      font-family: "Inter", sans-serif;
     }
 
     label {
       font-size: 1rem;
       font-weight: 500;
       line-height: 1.5;
-      font-family: 'Inter', sans-serif;
+      font-family: "Inter", sans-serif;
     }
 
     button {
       font-size: 1rem;
       font-weight: 600;
       line-height: 1.5;
-      font-family: 'Inter', sans-serif;
+      font-family: "Inter", sans-serif;
     }
 
     input {
       font-size: 1rem;
       font-weight: 400;
       line-height: 1.5;
-      font-family: 'Inter', sans-serif;
+      font-family: "Inter", sans-serif;
     }
   }
 }
@@ -253,7 +255,6 @@ html {
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0px);
@@ -289,4 +290,225 @@ html {
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom 2K resolution support */
+@media (min-width: 2560px) {
+  .container-2xl {
+    max-width: 2400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .text-2xl {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+  }
+
+  .text-3xl {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .text-4xl {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  .text-5xl {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .text-6xl {
+    font-size: 3.75rem;
+    line-height: 4rem;
+  }
+
+  .text-7xl {
+    font-size: 4.5rem;
+    line-height: 5rem;
+  }
+
+  .py-32 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  .py-28 {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+
+  .px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .gap-20 {
+    gap: 5rem;
+  }
+
+  .gap-16 {
+    gap: 4rem;
+  }
+
+  .mb-28 {
+    margin-bottom: 7rem;
+  }
+
+  .mb-24 {
+    margin-bottom: 6rem;
+  }
+
+  .mb-20 {
+    margin-bottom: 5rem;
+  }
+
+  .mb-16 {
+    margin-bottom: 4rem;
+  }
+
+  .mb-12 {
+    margin-bottom: 3rem;
+  }
+
+  .mb-8 {
+    margin-bottom: 2rem;
+  }
+
+  .mb-6 {
+    margin-bottom: 1.5rem;
+  }
+
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+
+  .space-y-8 > * + * {
+    margin-top: 2rem;
+  }
+
+  .space-y-6 > * + * {
+    margin-top: 1.5rem;
+  }
+
+  .space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+
+  .space-y-3 > * + * {
+    margin-top: 0.75rem;
+  }
+
+  .space-y-2 > * + * {
+    margin-top: 0.5rem;
+  }
+}
+
+/* Enhanced spacing for ultra-wide screens */
+@media (min-width: 3440px) {
+  .container-2xl {
+    max-width: 3200px;
+  }
+
+  .px-16 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .py-32 {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  .gap-20 {
+    gap: 6rem;
+  }
+
+  .gap-16 {
+    gap: 5rem;
+  }
+}
+
+/* Improved responsive typography */
+@media (min-width: 1024px) {
+  .text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .text-5xl {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .text-6xl {
+    font-size: 3.75rem;
+    line-height: 4rem;
+  }
 }

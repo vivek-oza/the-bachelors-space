@@ -1,113 +1,125 @@
-'use client'
+"use client";
 
-import { motion } from 'motion/react'
-import { Card, CardContent } from './ui/card'
-import { Badge } from './ui/badge'
-import { ImageWithFallback } from './figma/ImageWithFallback'
-import { 
-  Home, 
-  Utensils, 
-  Wifi, 
-  Shirt, 
-  Wrench, 
+import { motion } from "motion/react";
+import { Card, CardContent } from "./ui/card";
+import { Badge } from "./ui/badge";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import {
+  Home,
+  Utensils,
+  Wifi,
+  Shirt,
+  Wrench,
   Zap,
   Star,
-  Users
-} from 'lucide-react'
+  Users,
+} from "lucide-react";
 
 const facilities = [
   {
     icon: Home,
-    name: 'Accommodation',
-    description: 'Comfortable shared rooms with modern amenities',
-    color: 'from-purple-400 to-purple-600'
+    name: "Accommodation",
+    description: "Comfortable shared rooms with modern amenities",
+    color: "from-purple-400 to-purple-600",
   },
   {
     icon: Utensils,
-    name: 'Food',
-    description: 'Nutritious meals provided daily',
-    color: 'from-teal-400 to-teal-600'
+    name: "Food",
+    description: "Nutritious meals provided daily",
+    color: "from-teal-400 to-teal-600",
   },
   {
     icon: Wifi,
-    name: 'High-Speed WiFi',
-    description: 'Reliable internet throughout the facility',
-    color: 'from-cyan-400 to-cyan-600'
+    name: "High-Speed WiFi",
+    description: "Reliable internet throughout the facility",
+    color: "from-cyan-400 to-cyan-600",
   },
   {
     icon: Shirt,
-    name: 'Laundry Service',
-    description: 'Regular cleaning and maintenance',
-    color: 'from-yellow-400 to-yellow-600'
+    name: "Laundry Service",
+    description: "Regular cleaning and maintenance",
+    color: "from-yellow-400 to-yellow-600",
   },
   {
     icon: Wrench,
-    name: 'Maintenance',
-    description: '24/7 facility maintenance and support',
-    color: 'from-pink-400 to-pink-600'
+    name: "Maintenance",
+    description: "24/7 facility maintenance and support",
+    color: "from-pink-400 to-pink-600",
   },
   {
     icon: Zap,
-    name: 'Utilities',
-    description: 'Electricity, water, and essential services',
-    color: 'from-purple-400 to-purple-600'
-  }
-]
+    name: "Utilities",
+    description: "Electricity, water, and essential services",
+    color: "from-purple-400 to-purple-600",
+  },
+];
 
 // Payment methods and extra services moved to PaymentMethods.tsx
 
 export function FacilitiesPayment() {
   return (
-    <section id='facilities' className="py-20 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section
+      id="facilities"
+      className="w-full py-20 lg:py-28 xl:py-32 bg-gradient-to-b from-gray-50 to-white"
+    >
+      <div className="max-w-[2560px] mx-auto px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Facilities Section */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-16 lg:mb-20 xl:mb-24"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <motion.div 
-            className="inline-flex items-center gap-2 bg-teal-100 text-teal-700 px-4 py-2 rounded-full mb-4"
+          <motion.div
+            className="inline-flex items-center gap-2 bg-teal-100 text-teal-700 px-4 py-2 lg:px-6 lg:py-3 rounded-full mb-4 lg:mb-6"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Star className="w-4 h-4" />
-            <span className="font-medium font-body">All Inclusive</span>
+            <Star className="w-4 h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6" />
+            <span className="font-medium font-body text-sm lg:text-base">All Inclusive</span>
           </motion.div>
-          <h2 className="text-3xl md:text-4xl text-purple-900 mb-6 font-heading">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-purple-900 mb-6 lg:mb-8 font-heading">
             Included Facilities
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-body">
-            Everything you need for comfortable living, all included in your plan.
+          <p className="text-lg lg:text-xl xl:text-2xl text-gray-600 max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto font-body">
+            Everything you need for comfortable living, all included in your
+            plan.
           </p>
         </motion.div>
 
         {/* Community Section with Image */}
         <motion.div
-          className="mb-20"
+          className="mb-20 lg:mb-24 xl:mb-28"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center">
             <div>
               <h3 className="text-3xl md:text-start text-center text-purple-900 mb-6 font-heading">
                 Join Our Vibrant Community
               </h3>
               <p className="text-lg text-gray-600 mb-8 font-body">
-                Experience the joy of living with like-minded students in our modern, 
-                well-equipped hostel. Build friendships, share experiences, and create 
-                memories that will last a lifetime.
+                Experience the joy of living with like-minded students in our
+                modern, well-equipped hostel. Build friendships, share
+                experiences, and create memories that will last a lifetime.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { number: '500+', label: 'Happy Students', color: 'text-yellow-600' },
-                  { number: '24/7', label: 'Support', color: 'text-teal-600' },
-                  { number: '98%', label: 'Satisfaction', color: 'text-pink-600' },
-                  { number: '5★', label: 'Rating', color: 'text-cyan-600' }
+                  {
+                    number: "500+",
+                    label: "Happy Students",
+                    color: "text-yellow-600",
+                  },
+                  { number: "24/7", label: "Support", color: "text-teal-600" },
+                  {
+                    number: "98%",
+                    label: "Satisfaction",
+                    color: "text-pink-600",
+                  },
+                  { number: "5★", label: "Rating", color: "text-cyan-600" },
                 ].map((stat, index) => (
                   <motion.div
                     key={stat.label}
@@ -121,7 +133,9 @@ export function FacilitiesPayment() {
                     <div className={`text-2xl ${stat.color} font-heading`}>
                       {stat.number}
                     </div>
-                    <div className="text-sm text-gray-600 font-body">{stat.label}</div>
+                    <div className="text-sm text-gray-600 font-body">
+                      {stat.label}
+                    </div>
                   </motion.div>
                 ))}
               </div>
@@ -138,7 +152,7 @@ export function FacilitiesPayment() {
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
-                
+
                 {/* Floating badge */}
                 <motion.div
                   className="absolute top-4 right-4"
@@ -176,8 +190,12 @@ export function FacilitiesPayment() {
                   >
                     <facility.icon className="w-8 h-8" />
                   </motion.div>
-                  <h3 className="text-xl text-purple-900 mb-2 font-heading">{facility.name}</h3>
-                  <p className="text-gray-600 font-body">{facility.description}</p>
+                  <h3 className="text-xl text-purple-900 mb-2 font-heading">
+                    {facility.name}
+                  </h3>
+                  <p className="text-gray-600 font-body">
+                    {facility.description}
+                  </p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -187,5 +205,5 @@ export function FacilitiesPayment() {
         {/* Payment and Extra Services moved to PaymentMethods section */}
       </div>
     </section>
-  )
+  );
 }

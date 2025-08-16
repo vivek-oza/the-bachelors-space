@@ -1,26 +1,25 @@
-'use client'
+"use client";
 
-import { Navigation } from './components/Navigation'
-import { HeroSection } from './components/HeroSection'
-import { ImageCarousel } from './components/ImageCarousel'
-import { MarqueeSection } from './components/MarqueeSection'
-import { YearlyPlans } from './components/YearlyPlans'
-import { MonthlyPlans } from './components/MonthlyPlans'
-import { RulesRegulations } from './components/RulesRegulations'
-import { FacilitiesPayment } from './components/FacilitiesPayment'
-import { PaymentMethods } from './components/PaymentMethods'
-import { Branches } from './components/Branches'
-import { NearbyInstitutions } from './components/NearbyInstitutions'
-import { CallToAction } from './components/CallToAction'
-import { Toaster } from './components/ui/sonner'
-import { motion } from 'motion/react'
-import { Heart, Zap, Star } from 'lucide-react'
-import logo from './assets/logo.png'
-import img2 from './assets/2.png'
-import img4 from './assets/4.png'
-import img6 from './assets/6.png'
-import img9 from './assets/9.png'
-import { BranchesCreative } from './components/BranchesCreative'
+import { Navigation } from "./components/Navigation";
+import { HeroSection } from "./components/HeroSection";
+import { ImageCarousel } from "./components/ImageCarousel";
+import { MarqueeSection } from "./components/MarqueeSection";
+import { YearlyPlans } from "./components/YearlyPlans";
+import { MonthlyPlans } from "./components/MonthlyPlans";
+import { RulesRegulations } from "./components/RulesRegulations";
+import { FacilitiesPayment } from "./components/FacilitiesPayment";
+import { PaymentMethods } from "./components/PaymentMethods";
+// import { Branches } from "./components/Branches";
+import { NearbyInstitutions } from "./components/NearbyInstitutions";
+import { CallToAction } from "./components/CallToAction";
+import { Toaster } from "./components/ui/sonner";
+import { motion } from "motion/react";
+import { Heart, Zap, Star } from "lucide-react";
+import logo from "./assets/logo.png";
+import img2 from "./assets/2.png";
+import img4 from "./assets/4.png";
+import img6 from "./assets/6.png";
+import img9 from "./assets/9.png";
 
 export default function App() {
   return (
@@ -39,117 +38,63 @@ export default function App() {
 
       {/* Nearby Colleges & Universities */}
       <NearbyInstitutions />
-      
+
       {/* Image Carousel */}
       <ImageCarousel />
 
-
       {/* About Us */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 via-blue-50 to-teal-50">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 lg:py-28 xl:py-32 bg-gradient-to-br from-purple-50 via-blue-50 to-teal-50">
+        <div className="max-w-[2560px] mx-auto px-6 lg:px-8 xl:px-12 2xl:px-16">
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-4 lg:mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <motion.div 
-              className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full mb-4"
+            <motion.div
+              className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 lg:px-6 lg:py-3 rounded-full mb-4 lg:mb-6"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="text-lg">🏡</span>
-              <span className="font-medium font-body">About Us</span>
+              <span className="text-lg lg:text-xl">🏡</span>
+              <span className="font-medium font-body text-sm lg:text-base">About Us</span>
             </motion.div>
-            <h2 className="text-4xl md:text-6xl text-purple-900 mb-6 font-heading">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-purple-900 mb-6 lg:mb-8 font-heading">
               The Bachelor's Space
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto font-body">
-              Gandhinagar's premium hostel and PG destination — where luxury meets youth lifestyle.
+            <p className="text-lg lg:text-xl xl:text-2xl text-gray-600 max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto font-body">
+              Gandhinagar's premium hostel and PG destination — where luxury
+              meets youth lifestyle.
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto ">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="space-y-6 text-center lg:text-left"
+              className="space-y-6 lg:space-y-8 text-center"
             >
-              <p className="text-lg text-gray-700 leading-relaxed font-body">
-                Welcome to The Bachelor's Space, Gandhinagar's <span className="font-semibold text-purple-600">premium hostel and PG destination</span> — where luxury meets youth lifestyle. Designed for students and working professionals, TBS offers a balanced and vibrant living experience with top-tier amenities, modern interiors, and a community-driven atmosphere.
+              <p className="text-lg lg:text-xl xl:text-2xl text-gray-700 leading-relaxed font-body">
+                Welcome to The Bachelor's Space, Gandhinagar's{" "}
+                <span className="font-semibold text-purple-600">
+                  premium hostel and PG destination
+                </span>{" "}
+                — where luxury meets youth lifestyle. Designed for students and
+                working professionals, TBS offers a balanced and vibrant living
+                experience with top-tier amenities, modern interiors, and a
+                community-driven atmosphere.
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed font-body">
-                Whether it's freshly cooked meals, clean rooms, or a chill lounge with a gaming zone, we make sure your stay feels like home — <span className="font-semibold text-teal-600">just a bit cooler</span>.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 shadow-xl border border-purple-100"
-            >
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <span className="text-2xl">📍</span>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2 font-heading">Branch 1</h3>
-                    <p className="text-gray-600 font-body leading-relaxed">
-                      Sanskruti Signius, Nr Siddhraj Z+, Reliance Cross Road,<br/>
-                      Opp. Aashka Hospital, Sargasan, Gandhinagar, Gujarat 382421
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <span className="text-2xl">📍</span>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2 font-heading">Branch 2</h3>
-                    <p className="text-gray-600 font-body leading-relaxed">
-                      5th Floor, Pramukh Avenue, Above Kishor Institute, Near Zudio,<br/>
-                      Reliance Cross Road, Sargasan, Gandhinagar - 382421
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <span className="text-2xl">📞</span>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2 font-heading">Contact Us</h3>
-                    <div className="space-y-1">
-                      <p className="text-gray-600 font-body flex items-center gap-2">
-                        <span className="text-lg">📱</span>
-                        <a href="tel:+918200964448" className="hover:text-purple-600 transition-colors">+91 82009 64448</a>
-                      </p>
-                      <p className="text-gray-600 font-body flex items-center gap-2">
-                        <span className="text-lg">📱</span>
-                        <a href="tel:+918866964448" className="hover:text-purple-600 transition-colors">+91 88669 64448</a>
-                      </p>
-                      <p className="text-gray-600 font-body flex items-center gap-2">
-                        <span className="text-lg">📱</span>
-                        <a href="tel:+918866960171" className="hover:text-purple-600 transition-colors">+91 88669 60171</a>
-                      </p>
-                      <p className="text-gray-600 font-body flex items-center gap-2">
-                        <span className="text-lg">📱</span>
-                        <a href="tel:+918866960176" className="hover:text-purple-600 transition-colors">+91 88669 60176</a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-
       {/* Monthly Plans */}
       <MonthlyPlans />
-      
+
       {/* Yearly Plans */}
       <YearlyPlans />
 
@@ -158,15 +103,12 @@ export default function App() {
 
       {/* Payment Methods & Extra Services */}
       <PaymentMethods />
-      
 
       {/* Call to Action */}
       <CallToAction />
 
       {/* Branch Locations */}
-      <Branches />
-
-      <BranchesCreative />
+      {/* <Branches /> */}
 
       {/* Enhanced Footer */}
       <footer className="bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 text-white py-16 relative overflow-hidden">
@@ -184,21 +126,36 @@ export default function App() {
             alt=""
             className="absolute top-16 right-20 w-20 h-20 opacity-25"
             animate={{ rotate: [0, -15, 15, 0], scale: [1, 1.1, 1] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
           />
           <motion.img
             src={img6}
             alt=""
             className="absolute bottom-32 left-24 w-14 h-14 opacity-40"
             animate={{ rotate: [0, 20, -20, 0], x: [0, 10, -10, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 2,
+            }}
           />
           <motion.img
             src={img9}
             alt=""
             className="absolute bottom-24 right-16 w-18 h-18 opacity-35"
             animate={{ rotate: [0, -10, 10, 0], y: [0, 8, -8, 0] }}
-            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            transition={{
+              duration: 3.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 0.5,
+            }}
           />
         </div>
 
@@ -221,8 +178,8 @@ export default function App() {
           />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid md:grid-cols-4 gap-8">
+        <div className="max-w-7xl lg:max-w-6xl xl:max-w-7xl 2xl:max-w-8xl mx-auto px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
+          <div className="grid md:grid-cols-4 gap-8 lg:gap-12 xl:gap-16">
             <motion.div
               className="md:col-span-2"
               initial={{ opacity: 0, y: 20 }}
@@ -240,10 +197,13 @@ export default function App() {
                 </motion.h3>
               </div>
               <p className="text-gray-300 mb-6 text-lg font-body">
-                Your home away from home. Comfortable, affordable, and vibrant student accommodation.
+                Your home away from home. Comfortable, affordable, and vibrant
+                student accommodation.
               </p>
               <div>
-                <h4 className="font-medium mb-4 text-xl font-heading">Follow & Contact</h4>
+                <h4 className="font-medium mb-4 text-xl font-heading">
+                  Follow & Contact
+                </h4>
                 <div className="flex space-x-4">
                   <motion.a
                     href="https://www.instagram.com/the_bachelors_space/"
@@ -256,8 +216,15 @@ export default function App() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35"
-                      fill="white" viewBox="0 0 256 256"><path d="M128,82a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,80a34,34,0,1,1,34-34A34,34,0,0,1,128,162ZM176,26H80A54.06,54.06,0,0,0,26,80v96a54.06,54.06,0,0,0,54,54h96a54.06,54.06,0,0,0,54-54V80A54.06,54.06,0,0,0,176,26Zm42,150a42,42,0,0,1-42,42H80a42,42,0,0,1-42-42V80A42,42,0,0,1,80,38h96a42,42,0,0,1,42,42ZM190,76a10,10,0,1,1-10-10A10,10,0,0,1,190,76Z"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="35"
+                      height="35"
+                      fill="white"
+                      viewBox="0 0 256 256"
+                    >
+                      <path d="M128,82a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,80a34,34,0,1,1,34-34A34,34,0,0,1,128,162ZM176,26H80A54.06,54.06,0,0,0,26,80v96a54.06,54.06,0,0,0,54,54h96a54.06,54.06,0,0,0,54-54V80A54.06,54.06,0,0,0,176,26Zm42,150a42,42,0,0,1-42,42H80a42,42,0,0,1-42-42V80A42,42,0,0,1,80,38h96a42,42,0,0,1,42,42ZM190,76a10,10,0,1,1-10-10A10,10,0,0,1,190,76Z"></path>
+                    </svg>
                   </motion.a>
                   <motion.a
                     href="tel:+918200964448"
@@ -268,8 +235,15 @@ export default function App() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3, delay: 0.1 }}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35"
-                      fill="white" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="35"
+                      height="35"
+                      fill="white"
+                      viewBox="0 0 256 256"
+                    >
+                      <path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"></path>
+                    </svg>
                   </motion.a>
                 </div>
               </div>
@@ -281,16 +255,46 @@ export default function App() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h4 className="font-medium mb-4 text-xl font-heading">Quick Links</h4>
+              <h4 className="font-medium mb-4 text-xl font-heading">
+                Quick Links
+              </h4>
               <ul className="space-y-3 text-gray-300">
                 {[
-                  { href: '#monthly', label: 'Monthly Plan', color: 'hover:text-yellow-400' },
-                  { href: '#yearly', label: 'Yearly Plan', color: 'hover:text-teal-400' },
-                  { href: '#payment', label: 'Payment Method', color: 'hover:text-amber-400' },
-                  { href: '#nearby', label: 'Nearby', color: 'hover:text-purple-300' },
-                  { href: '#facilities', label: 'Included Facilities', color: 'hover:text-pink-400' },
-                  { href: '#location', label: 'Locations', color: 'hover:text-blue-400' },
-                  { href: '#apply', label: 'Contact', color: 'hover:text-green-400' }
+                  {
+                    href: "#monthly",
+                    label: "Monthly Plan",
+                    color: "hover:text-yellow-400",
+                  },
+                  {
+                    href: "#yearly",
+                    label: "Yearly Plan",
+                    color: "hover:text-teal-400",
+                  },
+                  {
+                    href: "#payment",
+                    label: "Payment Method",
+                    color: "hover:text-amber-400",
+                  },
+                  {
+                    href: "#nearby",
+                    label: "Nearby",
+                    color: "hover:text-purple-300",
+                  },
+                  {
+                    href: "#facilities",
+                    label: "Included Facilities",
+                    color: "hover:text-pink-400",
+                  },
+                  {
+                    href: "#location",
+                    label: "Locations",
+                    color: "hover:text-blue-400",
+                  },
+                  {
+                    href: "#apply",
+                    label: "Contact",
+                    color: "hover:text-green-400",
+                  },
                 ].map((link, index) => (
                   <motion.li
                     key={link.label}
@@ -299,7 +303,10 @@ export default function App() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
                   >
-                    <a href={link.href} className={`transition-colors font-body ${link.color}`}>
+                    <a
+                      href={link.href}
+                      className={`transition-colors font-body ${link.color}`}
+                    >
                       {link.label}
                     </a>
                   </motion.li>
@@ -313,15 +320,17 @@ export default function App() {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <h4 className="font-medium mb-4 text-xl font-heading">Contact Info</h4>
+              <h4 className="font-medium mb-4 text-xl font-heading">
+                Contact Info
+              </h4>
               <ul className="space-y-3 text-gray-300">
                 {[
-                  'Branch 1:',
-                  '+91 82009 64448',
-                  '+91 88669 64448',
-                  'Branch 2:',
-                  '+91 88669 60171',
-                  '+91 88669 60176'
+                  "Branch 1:",
+                  "+91 82009 64448",
+                  "+91 88669 64448",
+                  "Branch 2:",
+                  "+91 88669 60171",
+                  "+91 88669 60176",
                 ].map((contact, index) => (
                   <motion.li
                     key={contact}
@@ -351,10 +360,21 @@ export default function App() {
               transition={{ duration: 3, repeat: Infinity }}
             >
               <Heart className="w-4 h-4 text-pink-400" />
-              <span className="font-body">Made with love By <a className='underline' target='_blank' href="https://www.digilynk.in">Digilynk</a> </span>
+              <span className="font-body">
+                Made with love By{" "}
+                <a
+                  className="underline"
+                  target="_blank"
+                  href="https://www.digilynk.in"
+                >
+                  Digilynk
+                </a>{" "}
+              </span>
               <Star className="w-4 h-4 text-yellow-400" />
             </motion.div>
-            <p className="font-body">&copy; 2025 The Bachelor's Space. All rights reserved.</p>
+            <p className="font-body">
+              &copy; 2025 The Bachelor's Space. All rights reserved.
+            </p>
           </motion.div>
         </div>
       </footer>
@@ -362,5 +382,5 @@ export default function App() {
       {/* Toast Notifications */}
       <Toaster />
     </div>
-  )
+  );
 }
