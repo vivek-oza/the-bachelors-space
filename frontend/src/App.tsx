@@ -96,10 +96,21 @@ export default function App() {
                 <div className="flex items-start gap-4">
                   <span className="text-2xl">📍</span>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2 font-heading">Location</h3>
+                    <h3 className="font-semibold text-gray-900 mb-2 font-heading">Branch 1</h3>
                     <p className="text-gray-600 font-body leading-relaxed">
                       Sanskruti Signius, Nr Siddhraj Z+, Reliance Cross Road,<br/>
                       Opp. Aashka Hospital, Sargasan, Gandhinagar, Gujarat 382421
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <span className="text-2xl">📍</span>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-2 font-heading">Branch 2</h3>
+                    <p className="text-gray-600 font-body leading-relaxed">
+                      5th Floor, Pramukh Avenue, Above Kishor Institute, Near Zudio,<br/>
+                      Reliance Cross Road, Sargasan, Gandhinagar - 382421
                     </p>
                   </div>
                 </div>
@@ -116,6 +127,14 @@ export default function App() {
                       <p className="text-gray-600 font-body flex items-center gap-2">
                         <span className="text-lg">📱</span>
                         <a href="tel:+918866964448" className="hover:text-purple-600 transition-colors">+91 88669 64448</a>
+                      </p>
+                      <p className="text-gray-600 font-body flex items-center gap-2">
+                        <span className="text-lg">📱</span>
+                        <a href="tel:+918866960171" className="hover:text-purple-600 transition-colors">+91 88669 60171</a>
+                      </p>
+                      <p className="text-gray-600 font-body flex items-center gap-2">
+                        <span className="text-lg">📱</span>
+                        <a href="tel:+918866960176" className="hover:text-purple-600 transition-colors">+91 88669 60176</a>
                       </p>
                     </div>
                   </div>

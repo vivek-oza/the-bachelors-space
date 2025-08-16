@@ -8,21 +8,21 @@ import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react'
 import img1 from '../assets/Carousel/1.webp'
 import img2 from '../assets/Carousel/2.webp'
 import img3 from '../assets/Carousel/3.webp'
-import img4 from '../assets/Carousel/4.webp'
-import img5 from '../assets/Carousel/5.webp'
-import img6 from '../assets/Carousel/6.webp'
-import img7 from '../assets/Carousel/7.webp'
-import img8 from '../assets/Carousel/8.webp'
+// import img4 from '../assets/Carousel/4.webp'
+// import img5 from '../assets/Carousel/5.webp'
+// import img6 from '../assets/Carousel/6.webp'
+// import img7 from '../assets/Carousel/7.webp'
+// import img8 from '../assets/Carousel/8.webp'
 
 const carouselImages = [
   { src: img1, aspectRatio: 'horizontal' },
   { src: img2, aspectRatio: 'horizontal' },
   { src: img3, aspectRatio: 'horizontal' },
-  { src: img4, aspectRatio: 'vertical' },
-  { src: img5, aspectRatio: 'vertical' },
-  { src: img6, aspectRatio: 'vertical' },
-  { src: img7, aspectRatio: 'vertical' },
-  { src: img8, aspectRatio: 'vertical' }
+  // { src: img4, aspectRatio: 'vertical' },
+  // { src: img5, aspectRatio: 'vertical' },
+  // { src: img6, aspectRatio: 'vertical' },
+  // { src: img7, aspectRatio: 'vertical' },
+  // { src: img8, aspectRatio: 'vertical' }
 ]
 
 export function ImageCarousel() {
@@ -107,7 +107,7 @@ export function ImageCarousel() {
             <span className="text-lg">📸</span>
             <span className="font-medium font-body">Gallery</span>
           </motion.div>
-          <h2 className="text-4xl md:text-6xl text-purple-900 mb-6 font-heading">
+          <h2 className="text-3xl md:text-4xl text-purple-900 mb-6 font-heading">
             Experience Our Space
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto font-body">

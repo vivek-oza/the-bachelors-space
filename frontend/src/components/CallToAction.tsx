@@ -103,7 +103,7 @@ export function CallToAction() {
             <Star className="w-4 h-4" />
             <span className="font-medium font-body">Get Started</span>
           </div>
-          <h2 className="text-4xl md:text-6xl text-white mb-6 font-heading">
+          <h2 className="text-3xl md:text-4xl text-white mb-6 font-heading">
             Ready to Join Our
             <span className="block bg-gradient-to-r from-yellow-400 to-teal-400 bg-clip-text text-transparent font-serif italic py-2">
               Community?

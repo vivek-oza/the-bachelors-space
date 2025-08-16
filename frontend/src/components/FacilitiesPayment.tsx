@@ -76,7 +76,7 @@ export function FacilitiesPayment() {
             <Star className="w-4 h-4" />
             <span className="font-medium font-body">All Inclusive</span>
           </motion.div>
-          <h2 className="text-4xl md:text-6xl text-purple-900 mb-6 font-heading">
+          <h2 className="text-3xl md:text-4xl text-purple-900 mb-6 font-heading">
             Included Facilities
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto font-body">
