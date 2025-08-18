@@ -60,29 +60,29 @@ export function FacilitiesPayment() {
   return (
     <section
       id="facilities"
-      className="w-full py-20 lg:py-28 xl:py-32 bg-gradient-to-b from-gray-50 to-white"
+      className="w-full py-16 lg:py-16 xl:py-28 bg-gradient-to-b from-gray-50 to-white"
     >
       <div className="max-w-[2560px] mx-auto px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Facilities Section */}
         <motion.div
-          className="text-center mb-16 lg:mb-20 xl:mb-24"
+          className="text-center mb-10 lg:mb-14 xl:mb-18"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 bg-teal-100 text-teal-700 px-4 py-2 lg:px-6 lg:py-3 rounded-full mb-4 lg:mb-6"
+            className="inline-flex items-center gap-2 bg-teal-100 text-teal-700 px-4 py-2 lg:px-6 lg:py-3 rounded-full mb-3 lg:mb-5"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Star className="w-4 h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6" />
-            <span className="font-medium font-body text-sm lg:text-base">All Inclusive</span>
+            <Star className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7" />
+            <span className="font-medium font-body text-xs sm:text-sm md:text-base lg:text-base xl:text-xl 2xl:text-2xl">All Inclusive</span>
           </motion.div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-purple-900 mb-6 lg:mb-8 font-heading">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-purple-900 mb-4 lg:mb-6 font-heading">
             Included Facilities
           </h2>
-          <p className="text-lg lg:text-xl xl:text-2xl text-gray-600 max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto font-body">
+          <p className="text-base lg:text-lg xl:text-xl 2xl:text-2xl text-gray-600 max-w-3xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto font-body">
             Everything you need for comfortable living, all included in your
             plan.
           </p>
@@ -90,23 +90,23 @@ export function FacilitiesPayment() {
 
         {/* Community Section with Image */}
         <motion.div
-          className="mb-20 lg:mb-24 xl:mb-28"
+          className="mb-14 lg:mb-18 xl:mb-22"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center">
-            <div>
-              <h3 className="text-3xl md:text-start text-center text-purple-900 mb-6 font-heading">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-18 items-center">
+            <div className="flex flex-col items-center h-full w-full gap-y-3 lg:gap-y-4 xl:gap-y-12 lg:items-start justify-center">
+              <h3 className="text-2xl md:text-3xl lg:text-3xl xl:text-5xl 2xl:text-5xl lg:text-start text-center text-purple-900 mb-4 font-heading">
                 Join Our Vibrant Community
               </h3>
-              <p className="text-lg text-gray-600 mb-8 font-body">
+              <p className="text-center lg:text-start text-base sm:text-base md:text-base lg:text-lg xl:text-2xl text-gray-600 mb-5 font-body">
                 Experience the joy of living with like-minded students in our
                 modern, well-equipped hostel. Build friendships, share
                 experiences, and create memories that will last a lifetime.
               </p>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid w-full grid-cols-2 gap-3 lg:gap-4">
                 {[
                   {
                     number: "500+",
@@ -123,17 +123,17 @@ export function FacilitiesPayment() {
                 ].map((stat, index) => (
                   <motion.div
                     key={stat.label}
-                    className="text-center p-4 bg-white rounded-xl shadow-md"
+                    className="text-center p-4 bg-white py-2 md:py-3 xl:py-16 rounded-xl shadow-md"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.05 }}
                   >
-                    <div className={`text-2xl ${stat.color} font-heading`}>
+                    <div className={`text-xl md:text-2xl lg:text-2xl xl:text-4xl 2xl:text-4xl ${stat.color} font-heading`}>
                       {stat.number}
                     </div>
-                    <div className="text-sm text-gray-600 font-body">
+                    <div className="text-xs md:text-sm lg:text-sm xl:text-lg 2xl:text-lg text-gray-600 font-body">
                       {stat.label}
                     </div>
                   </motion.div>
@@ -170,7 +170,7 @@ export function FacilitiesPayment() {
         </motion.div>
 
         {/* Facilities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 mb-14 lg:mb-18">
           {facilities.map((facility, index) => (
             <motion.div
               key={facility.name}
@@ -182,18 +182,18 @@ export function FacilitiesPayment() {
               className="group"
             >
               <Card className="h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden bg-white">
-                <CardContent className="p-6 text-center">
+                <CardContent className="p-5 text-center">
                   <motion.div
-                    className={`inline-flex p-4 rounded-full bg-gradient-to-r ${facility.color} text-white mb-4`}
+                    className={`inline-flex p-4 rounded-full bg-gradient-to-r ${facility.color} text-white mb-3`}
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <facility.icon className="w-8 h-8" />
+                    <facility.icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-8 lg:h-8 xl:w-10 xl:h-10 2xl:w-11 2xl:h-11" />
                   </motion.div>
-                  <h3 className="text-xl text-purple-900 mb-2 font-heading">
+                  <h3 className="text-lg sm:text-xl md:text-2xl lg:text-xl xl:text-3xl 2xl:text-3xl text-purple-900 mb-1 font-heading">
                     {facility.name}
                   </h3>
-                  <p className="text-gray-600 font-body">
+                  <p className="text-sm sm:text-base md:text-lg lg:text-base xl:text-xl 2xl:text-xl text-gray-600 font-body">
                     {facility.description}
                   </p>
                 </CardContent>

@@ -20,11 +20,11 @@ export function Navigation() {
   }, []);
 
   const navItems = [
-    { id: "facilities", label: "Included Facilities" },
+    { id: "facilities", label: "Facilities" },
     { id: "nearby", label: "Nearby" },
     { id: "monthly", label: "Monthly Plan" },
     { id: "yearly", label: "Yearly Plan" },
-    { id: "payment", label: "Payment Method" },
+    { id: "payment", label: "Payment" },
     // { id: 'rules', label: 'Rules & Regulations' },
     { id: "location", label: "Location" },
   ];
@@ -49,7 +49,7 @@ export function Navigation() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="max-w-[2560px] mx-auto px-6 lg:px-8 xl:px-12 2xl:px-16 py-4 lg:py-6">
+      <div className="max-w-[2560px] mx-auto px-6 lg:px-8 xl:px-12 2xl:px-16 py-2 lg:py-3">
         <div className="flex items-center justify-between">
           <motion.div
             className="flex cursor-pointer items-center gap-3 lg:gap-4"
@@ -60,17 +60,17 @@ export function Navigation() {
               src={logo}
               onClick={() => scrollToSection("hero")}
               alt="Logo"
-              className="h-14 md:12 lg:h-13.5 xl:h-24 rounded w-auto"
+              className="h-14 sm:h-15 lg:h-13.5 xl:h-24 rounded w-auto"
             />
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8 lg:space-x-10 xl:space-x-12">
+          <div className="hidden md:flex items-center tracking-tight space-x-4 lg:space-x-10 xl:space-x-12">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm lg:text-base xl:text-xl  cursor-pointer font-medium transition-all duration-200 relative font-body ${
+                className={`text-xs sm:text-sm md:text-base6 lg:text-base xl:text-xl 2xl:text-2xl cursor-pointer font-medium transition-all duration-200 relative font-body ${
                   activeSection === item.id
                     ? isScrolled
                       ? "text-yellow-500"
@@ -97,8 +97,8 @@ export function Navigation() {
             ))}
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
-                onClick={() => scrollToSection("apply")}
-                className="bg-gradient-to-r bg-yellow-500 hover:bg-yellow-400 text-white hover:text-indigo-800 px-6 py-2 lg:px-8 lg:py-3 xl:px-10 xl:py-4 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 font-body text-sm lg:text-base xl:text-lg"
+                onClick={() => scrollToSection("location")}
+                className="bg-gradient-to-r bg-yellow-500 hover:bg-yellow-400 text-white hover:text-indigo-800 px-5 py-1.5 lg:px-7 lg:py-2.5 xl:px-7 xl:py-7 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 font-body text-xs sm:text-sm md:text-base lg:text-base xl:text-xl 2xl:text-2xl"
               >
                 <motion.span
                   animate={{ x: [0, 2, 0] }}
@@ -130,19 +130,19 @@ export function Navigation() {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden">
-            <div className="p-4 space-y-2 bg-white/95 backdrop-blur-md rounded-lg my-2 shadow-lg">
+            <div className="p-3 space-y-2 bg-white/95 backdrop-blur-md rounded-lg my-2 shadow-lg">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left px-4 py-2 rounded-lg transition-colors font-body text-gray-700 hover:bg-gray-100"
+                  className="block w-full text-left px-4 py-2 rounded-lg transition-colors font-body text-gray-700 hover:bg-gray-100 text-base sm:text-lg"
                 >
                   {item.label}
                 </button>
               ))}
               <Button
-                onClick={() => scrollToSection("apply")}
-                className="w-full mt-2 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-purple-900 px-6 py-2 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 font-body"
+                onClick={() => scrollToSection("location")}
+                className="w-full mt-2 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-purple-900 px-5 py-2 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 font-body text-base"
               >
                 Contact
               </Button>

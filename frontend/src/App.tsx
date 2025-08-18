@@ -43,7 +43,7 @@ export default function App() {
       <ImageCarousel />
 
       {/* About Us */}
-      <section className="py-20 lg:py-28 xl:py-32 bg-gradient-to-br from-purple-50 via-blue-50 to-teal-50">
+      <section className="py-10 lg:py-28 xl:py-32 bg-gradient-to-br from-purple-50 via-blue-50 to-teal-50">
         <div className="max-w-[2560px] mx-auto px-6 lg:px-8 xl:px-12 2xl:px-16">
           <motion.div
             className="text-center mb-4 lg:mb-8"
@@ -63,13 +63,13 @@ export default function App() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-purple-900 mb-6 lg:mb-8 font-heading">
               The Bachelor's Space
             </h2>
-            <p className="text-lg lg:text-xl xl:text-2xl text-gray-600 max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto font-body">
+            <p className="text-lg lg:text-xl xl:text-2xl text-gray-600 max-w-3xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto font-body">
               Gandhinagar's premium hostel and PG destination — where luxury
               meets youth lifestyle.
             </p>
           </motion.div>
 
-          <div className="max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto ">
+          <div className="max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto ">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -190,7 +190,7 @@ export default function App() {
               <div className="flex md:flex-row flex-col items-center gap-4 mb-4">
                 <img src={logo} alt="Logo" className="h-24 w-auto" />
                 <motion.h3
-                  className="text-3xl font-heading font-serif italic font-medium"
+                  className="text-2xl font-heading font-sans italic font-medium"
                   whileHover={{ scale: 1.05 }}
                 >
                   The Bachelor's Space
@@ -291,7 +291,7 @@ export default function App() {
                     color: "hover:text-blue-400",
                   },
                   {
-                    href: "#apply",
+                    href: "#location",
                     label: "Contact",
                     color: "hover:text-green-400",
                   },

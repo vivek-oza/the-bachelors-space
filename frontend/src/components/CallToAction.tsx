@@ -62,7 +62,7 @@ export function CallToAction() {
   return (
     <section
       id="location"
-      className="relative py-20 lg:py-28 xl:py-32 bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 overflow-hidden"
+      className="relative py-10 lg:py-28 xl:py-32 bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 overflow-hidden"
     >
       {/* Scattered Images */}
       <div className="absolute inset-0 pointer-events-none z-5 hidden md:block">
@@ -115,29 +115,29 @@ export function CallToAction() {
         <div className="max-w-[2560px] mx-auto px-6">
           {/* Header */}
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-10 lg:mb-14 xl:mb-18"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center gap-2 bg-yellow-400/20 text-yellow-300 px-4 py-2 rounded-full mb-4">
-              <Star className="w-4 h-4" />
-              <span className="font-medium font-body">Get Started</span>
+            <div className="inline-flex items-center gap-2 bg-yellow-400/20 text-yellow-300 px-4 py-2 lg:px-6 lg:py-3 rounded-full mb-3 lg:mb-5">
+              <Star className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7" />
+              <span className="font-medium font-body text-xs sm:text-sm md:text-base lg:text-base xl:text-xl 2xl:text-2xl">Get Started</span>
             </div>
-            <h2 className="text-3xl md:text-4xl text-white mb-6 font-heading">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-white mb-4 lg:mb-6 font-heading">
               Ready to Join Our
-              <span className="block bg-gradient-to-r from-yellow-400 to-teal-400 bg-clip-text text-transparent font-serif italic py-2">
+              <span className="block bg-gradient-to-r from-yellow-400 to-teal-400 bg-clip-text text-transparent font-serif italic py-1">
                 Community?
               </span>
             </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto font-body">
+            <p className="text-base lg:text-lg xl:text-xl 2xl:text-2xl text-gray-300 max-w-3xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto font-body">
               Take the first step towards comfortable, affordable, and vibrant
               hostel living.
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-1 gap-12 mb-16">
+          <div className="grid lg:grid-cols-1 gap-10 mb-14">
             {/* Application Form */}
             {/* <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -248,7 +248,7 @@ export function CallToAction() {
 
             {/* Contact Info & Stats */}
             <motion.div
-              className="space-y-8"
+              className="space-y-6 lg:space-y-8 xl:space-y-10"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -257,7 +257,7 @@ export function CallToAction() {
               {/* Contact Information */}
               <div className="space-y-8 xl:space-y-12">
                 {/* Branch 1 Row */}
-                <div className="bg-white/10 backdrop-blur rounded-3xl p-6 xl:p-8">
+                <div className="backdrop-blur rounded-3xl">
                   <div className="grid md:grid-cols-2 gap-6 xl:gap-8">
                     {/* Branch 1 Contact Info */}
                     <div className="bg-white/95 backdrop-blur rounded-2xl shadow-lg p-6 xl:p-8 h-80 xl:h-96 flex flex-col">
@@ -289,7 +289,7 @@ export function CallToAction() {
                     </div>
 
                     {/* Branch 1 Map */}
-                    <div className="bg-white/95 backdrop-blur rounded-2xl shadow-lg p-4 xl:p-6 h-80 xl:h-96">
+                    <div className="bg-violet-500/35 backdrop-blur rounded-[1.2rem] shadow-lg p-1 h-80 xl:h-96">
                       <div className="w-full h-full rounded-2xl overflow-hidden">
                         <iframe
                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.6662325439256!2d72.6182971348877!3d23.182378800000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c2b0042f351db%3A0x3ad6718fda18d7ef!2sThe%20Bachelor&#39;s%20Space%20-%20HOSTEL%20%26%20PG%20-%20Sargasan%2C%20Gandhinagar!5e0!3m2!1sen!2sin!4v1755338023009!5m2!1sen!2sin"
@@ -307,29 +307,29 @@ export function CallToAction() {
                 </div>
 
                 {/* Branch 2 Row */}
-                <div className="bg-white/10 backdrop-blur rounded-3xl p-6 xl:p-8">
+                <div className="backdrop-blur rounded-3xl">
                   <div className="grid md:grid-cols-2 gap-6 xl:gap-8">
                     {/* Branch 2 Contact Info */}
                     <div className="bg-white/95 backdrop-blur rounded-2xl shadow-lg p-6 xl:p-8 h-80 xl:h-96 flex flex-col">
-                      <div className="text-xl xl:text-2xl text-purple-900 font-heading mb-4 xl:mb-6">
+                      <div className="text-xl xl:text-2xl 2xl:text-3xl text-purple-900 font-heading mb-3 xl:mb-5">
                         Branch 2 Contact
                       </div>
-                      <div className="space-y-3 xl:space-y-4 flex-1">
+                      <div className="space-y-2 lg:space-y-3 xl:space-y-4 flex-1">
                         <div className="flex items-center gap-3 xl:gap-4">
                           <Phone className="w-5 h-5 xl:w-6 xl:h-6 text-teal-500" />
-                          <span className="text-gray-700 font-body text-base xl:text-lg">
+                          <span className="text-gray-700 font-body text-base lg:text-lg xl:text-xl 2xl:text-xl">
                             +91 88669 60171
                           </span>
                         </div>
                         <div className="flex items-center gap-3 xl:gap-4">
                           <Phone className="w-5 h-5 xl:w-6 xl:h-6 text-teal-500" />
-                          <span className="text-gray-700 font-body text-base xl:text-lg">
+                          <span className="text-gray-700 font-body text-base lg:text-lg xl:text-xl 2xl:text-xl">
                             +91 88669 60176
                           </span>
                         </div>
                         <div className="flex items-start gap-3 xl:gap-4">
                           <MapPin className="w-5 h-5 xl:w-6 xl:h-6 text-pink-500 mt-1 flex-shrink-0" />
-                          <span className="text-gray-700 font-body text-sm xl:text-base leading-relaxed">
+                          <span className="text-gray-700 font-body text-sm lg:text-base xl:text-lg 2xl:text-lg leading-relaxed">
                             5th Floor, Pramukh Avenue, Above Kishor Institute,
                             Near Zudio, Reliance Cross Road, Sargasan,
                             Gandhinagar - 382421
@@ -339,7 +339,7 @@ export function CallToAction() {
                     </div>
 
                     {/* Branch 2 Map */}
-                    <div className="bg-white/95 backdrop-blur rounded-2xl shadow-lg p-4 xl:p-6 h-80 xl:h-96">
+                    <div className="bg-violet-500/35 backdrop-blur rounded-[1.2rem] shadow-lg p-1 h-80 xl:h-96">
                       <div className="w-full h-full rounded-2xl overflow-hidden">
                         <iframe
                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.6662325439256!2d72.6182971348877!3d23.182378800000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c2b0027446371%3A0xd636d1cf8be0d697!2sThe%20New%20Bachelor&#39;s%20Space%20Hostel%20%26%20PG!5e0!3m2!1sen!2sin!4v1755338148872!5m2!1sen!2sin"
