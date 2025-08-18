@@ -92,38 +92,35 @@ export function ImageCarousel() {
   // }
 
   return (
-    <section className="w-full py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+    <section className="w-full py-16 lg:py-16 xl:py-24 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
       <div className="max-w-[2560px] mx-auto px-6 lg:px-8 xl:px-12 2xl:px-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12 lg:mb-16"
+          className="text-center mb-10 lg:mb-14 xl:mb-18"
         >
           <motion.div
-            className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full mb-4"
+            className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 lg:px-6 lg:py-3 rounded-full mb-3 lg:mb-5"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-lg">📸</span>
-            <span className="font-medium font-body">Gallery</span>
+            <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">📸</span>
+            <span className="font-medium font-body text-xs sm:text-sm md:text-base lg:text-base xl:text-xl 2xl:text-2xl">Gallery</span>
           </motion.div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-purple-900 mb-6 lg:mb-8 font-heading">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-purple-900 mb-4 lg:mb-6 font-heading">
             Our Facilities
           </h2>
-          <p className="text-lg lg:text-xl xl:text-2xl text-gray-600 max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto font-body">
+          <p className="text-base lg:text-lg xl:text-xl 2xl:text-2xl text-gray-600 max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto font-body">
             Take a virtual tour of our modern, well-equipped hostel facilities
           </p>
         </motion.div>
 
         <div className="relative">
           {/* Main Carousel */}
-          <div className="relative mb-8 rounded-2xl overflow-hidden bg-gray-100">
-            <div
-              className="relative w-full"
-              style={{ height: "clamp(250px, 50vw, 400px)" }}
-            >
+          <div className="relative mb-6 rounded-2xl overflow-hidden bg-gray-100">
+            <div className="relative w-full aspect-[16/9] lg:aspect-[21/9] xl:aspect-[24/9] 2xl:aspect-[28/9]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentIndex}
@@ -136,11 +133,7 @@ export function ImageCarousel() {
                   <img
                     src={carouselImages[currentIndex].src}
                     alt={`Carousel image ${currentIndex + 1}`}
-                    className={`rounded-2xl ${
-                      carouselImages[currentIndex].aspectRatio === "horizontal"
-                        ? "w-full h-full object-contain md:object-cover"
-                        : "h-full w-auto object-cover"
-                    }`}
+                    className="w-full h-full object-contain rounded-2xl"
                   />
                 </motion.div>
               </AnimatePresence>
@@ -160,14 +153,6 @@ export function ImageCarousel() {
             >
               <ChevronRight className="w-6 h-6" />
             </button>
-
-            {/* Play/Pause Button */}
-            {/* <button
-              onClick={togglePlayPause}
-              className="absolute top-4 right-4 bg-white/90 hover:bg-white text-gray-800 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
-            >
-              {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
-            </button> */}
           </div>
 
           {/* Progress Indicators */}
@@ -201,7 +186,7 @@ export function ImageCarousel() {
           </div>
 
           {/* Thumbnail Navigation */}
-          <div className="flex justify-center space-x-4 overflow-x-auto pb-4">
+          <div className="flex justify-center space-x-4 overflow-x-auto py-6">
             {carouselImages.map((image, index) => (
               <motion.button
                 key={index}
@@ -217,7 +202,7 @@ export function ImageCarousel() {
                 <img
                   src={image.src}
                   alt={`Thumbnail ${index + 1}`}
-                  className="w-20 h-16 object-cover"
+                  className="w-24 h-20 object-cover"
                 />
                 {index === currentIndex && (
                   <motion.div

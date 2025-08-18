@@ -11,21 +11,21 @@ export function MarqueeSection() {
     <section className="w-full py-5 lg:py-8 xl:py-10 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
       <div className="max-w-[2560px] mx-auto px-6 lg:px-8 xl:px-12 2xl:px-16">
         <motion.div
-          className="text-center mb-16 lg:mb-20 xl:mb-24"
+          className="text-center mb-10 lg:mb-14 xl:mb-18"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 lg:px-6 lg:py-3 rounded-full mb-4 lg:mb-6"
+            className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 lg:px-6 lg:py-3 rounded-full mb-3 lg:mb-5"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-lg lg:text-xl xl:text-2xl">🏢</span>
-            <span className="font-medium font-body text-sm lg:text-base">Our Facilities</span>
+            <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">🏢</span>
+            <span className="font-medium font-body text-xs sm:text-sm md:text-base lg:text-base xl:text-xl 2xl:text-2xl">Our Facilities</span>
           </motion.div>
-          <h2 className="text-4xl md:text-4xl lg:text-5xl xl:text-6xl text-purple-900 mb-6 lg:mb-8 font-heading">
+          <h2 className="text-4xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-purple-900 mb-4 lg:mb-6 font-heading">
             Modern Living Spaces
           </h2>
         </motion.div>
@@ -51,11 +51,11 @@ export function MarqueeSection() {
                 ...images,
                 ...images,
               ].map((image, index) => (
-                <div key={index} className="flex-shrink-0  h-34">
+                <div key={index} className="flex-shrink-0 h-28 lg:h-32 xl:h-36 2xl:h-40">
                   <img
                     src={image}
                     alt={`Hostel facility ${(index % 2) + 1}`}
-                    className="w-full h-full ps-10 object-cover"
+                    className="w-full h-full ps-8 lg:ps-10 object-cover"
                   />
                 </div>
               ))}

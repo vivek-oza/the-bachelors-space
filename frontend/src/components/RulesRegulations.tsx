@@ -139,7 +139,7 @@ export function RulesRegulations() {
   return (
     <section
       id="rules"
-      className="w-full py-20 bg-gradient-to-b from-white to-gray-50"
+      className="w-full py-10 bg-gradient-to-b from-white to-gray-50"
     >
       <div className="max-w-[2560px] mx-auto px-6">
         {/* Header */}
@@ -157,7 +157,7 @@ export function RulesRegulations() {
           <h2 className="text-4xl md:text-5xl text-purple-900 mb-6 font-heading">
             Rules & Regulations
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-body">
+          <p className="text-lg text-gray-600 max-w-3xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto font-body">
             Clear guidelines to ensure a comfortable and harmonious living
             environment for all residents.
           </p>
