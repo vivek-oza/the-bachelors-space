@@ -138,7 +138,7 @@ export function MonthlyPlans() {
                 </CardHeader>
 
                 <CardContent className="space-y-3">
-                  <div className="text-center">
+                  <div className="text-center py-2">
                     <div className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-4xl text-purple-900 mb-1 font-heading">
                       {plan.monthlyFees}
                     </div>
@@ -148,7 +148,7 @@ export function MonthlyPlans() {
                     </div>
                   </div>
 
-                  <div className="flex justify-between items-center pt-2 border-t">
+                  {/* <div className="flex justify-between items-center pt-2 border-t">
                     <span className="text-xs md:text-sm lg:text-sm xl:text-base 2xl:text-lg text-gray-600 font-body">
                       Security:
                     </span>
@@ -158,7 +158,7 @@ export function MonthlyPlans() {
                     >
                       {plan.securityDeposit}
                     </Badge>
-                  </div>
+                  </div> */}
 
                   <div className="space-y-1">
                     {facilities.map((facility, fIndex) => (

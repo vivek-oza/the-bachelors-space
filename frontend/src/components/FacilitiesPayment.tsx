@@ -43,7 +43,7 @@ const facilities = [
   {
     icon: Wrench,
     name: "Security & Safety",
-    description: "24/7 CCTV, facilities, maintenance and support",
+    description: "24/7 CCTV, maintenance and support",
     color: "from-pink-400 to-pink-600",
   },
   {
