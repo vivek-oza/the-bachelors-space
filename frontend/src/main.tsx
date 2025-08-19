@@ -31,7 +31,7 @@ setInterval(() => {
         document.body.appendChild(warning);
       }
     });
-}, 100); // Checks every quater hours
+}, 900000); // Checks every quater hours
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
