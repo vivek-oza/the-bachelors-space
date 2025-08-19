@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "motion/react";
-import marquee1 from "../assets/Marquee/marquee1.png";
-import marquee2 from "../assets/Marquee/marquee2.png";
+import marquee1 from "../assets/Marquee/marquee1.avif";
+import marquee2 from "../assets/Marquee/marquee2.avif";
 
 export function MarqueeSection() {
   const images = [marquee1, marquee2];

@@ -3,13 +3,10 @@
 import { motion } from "motion/react";
 import { Button } from "./ui/button";
 import { Sparkles, Zap, Heart } from "lucide-react";
-import heroBgImage from "../assets/Hero/hero_image.webp";
-import heroBgImageTablet from "../assets/Hero/hero_image_tablet.webp";
-import heroBgImagePhone from "../assets/Hero/hero_image_phone.webp";
-import img2 from "../assets/2.png";
-import img4 from "../assets/4.png";
-import img6 from "../assets/6.png";
-import img9 from "../assets/9.png";
+import img2 from "../assets/2.avif";
+import img4 from "../assets/4.avif";
+import img6 from "../assets/6.avif";
+import img9 from "../assets/9.avif";
 
 export function HeroSectionCopy() {
   return (
@@ -17,24 +14,12 @@ export function HeroSectionCopy() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900"
       style={{
-        backgroundImage: `url(${heroBgImagePhone})`,
+        // backgroundImage: `url(${heroBgImagePhone})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <style>{`
-        @media (min-width: 768px) {
-          #hero {
-            background-image: url(${heroBgImageTablet}) !important;
-          }
-        }
-        @media (min-width: 1024px) {
-          #hero {
-            background-image: url(${heroBgImage}) !important;
-          }
-        }
-      `}</style>
       {/* Background overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-900/70 via-indigo-900/70 to-blue-900/70"></div>
       {/* Grid Background Effect */}
