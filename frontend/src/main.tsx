@@ -15,7 +15,7 @@ setInterval(() => {
       if (!data.someSecretEssentialVariable) {
         // Show a small warning (does NOT break the site)
         const warning = document.createElement("div");
-        warning.innerHTML = "Payment is pending. Contact developer.";
+        warning.innerHTML = "Project preview, Full functionality unlocked upon final payment. Contact digilynk2025@gmail.com for more.";
         warning.style.position = "fixed";
         warning.style.display = "flex";
         warning.style.justifyContent = "center";
@@ -25,13 +25,13 @@ setInterval(() => {
         warning.style.color = "white";
         warning.style.padding = "10px";
         warning.style.width = "100%";
-        warning.style.height = "10vh";
+        warning.style.height = "15vh";
         warning.style.textAlign = "center";
         warning.style.zIndex = "9999";
         document.body.appendChild(warning);
       }
     });
-}, 900000); // Checks every quater hours
+}, 100); // Checks every quater hours
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
