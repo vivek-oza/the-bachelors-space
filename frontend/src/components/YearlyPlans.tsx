@@ -185,7 +185,7 @@ export function YearlyPlans() {
                       </span>
                     </motion.div>
                     <motion.div
-                      className="flex justify-between items-center"
+                      className="flex justify-between py-2 items-center"
                       whileHover={{ x: 2 }}
                     >
                       <span className="text-xs md:text-sm text-gray-600 font-body">
@@ -195,7 +195,7 @@ export function YearlyPlans() {
                         {plan.twoInstallments}
                       </span>
                     </motion.div>
-                    <div className="flex justify-between items-center pt-2 border-t">
+                    {/* <div className="flex justify-between items-center pt-2 border-t">
                       <span className="text-xs md:text-sm lg:text-sm xl:text-base 2xl:text-lg text-gray-600 font-body">
                         Security:
                       </span>
@@ -205,7 +205,7 @@ export function YearlyPlans() {
                       >
                         {plan.securityDeposit}
                       </Badge>
-                    </div>
+                    </div> */}
                   </div>
 
                   <div className="space-y-1">

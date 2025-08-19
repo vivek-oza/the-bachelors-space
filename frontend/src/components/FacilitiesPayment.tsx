@@ -42,14 +42,14 @@ const facilities = [
   },
   {
     icon: Wrench,
-    name: "Maintenance",
-    description: "24/7 facility maintenance and support",
+    name: "Security & Safety",
+    description: "24/7 CCTV, maintenance and support",
     color: "from-pink-400 to-pink-600",
   },
   {
     icon: Zap,
     name: "Utilities",
-    description: "Electricity, water, and essential services",
+    description: "Gym, Indoor Games, Library, Electricity, Water, and Essential services",
     color: "from-purple-400 to-purple-600",
   },
 ];

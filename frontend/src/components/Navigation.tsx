@@ -24,7 +24,7 @@ export function Navigation() {
     { id: "nearby", label: "Nearby" },
     { id: "monthly", label: "Monthly Plan" },
     { id: "yearly", label: "Yearly Plan" },
-    { id: "payment", label: "Payment" },
+    // { id: "payment", label: "Payment" },
     // { id: 'rules', label: 'Rules & Regulations' },
     { id: "location", label: "Location" },
   ];

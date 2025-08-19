@@ -8,7 +8,7 @@ import { YearlyPlans } from "./components/YearlyPlans";
 import { MonthlyPlans } from "./components/MonthlyPlans";
 import { RulesRegulations } from "./components/RulesRegulations";
 import { FacilitiesPayment } from "./components/FacilitiesPayment";
-import { PaymentMethods } from "./components/PaymentMethods";
+// import { PaymentMethods } from "./components/PaymentMethods";
 // import { Branches } from "./components/Branches";
 import { NearbyInstitutions } from "./components/NearbyInstitutions";
 import { CallToAction } from "./components/CallToAction";
@@ -20,12 +20,15 @@ import img2 from "./assets/2.avif";
 import img4 from "./assets/4.avif";
 import img6 from "./assets/6.avif";
 import img9 from "./assets/9.avif";
+import { PaymentNotice } from "./components/PaymentNotice";
 
 export default function App() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <Navigation />
+
+      {/* <PaymentNotice /> */}
 
       {/* Hero Section */}
       <HeroSection />
@@ -102,7 +105,7 @@ export default function App() {
       {/* <RulesRegulations /> */}
 
       {/* Payment Methods & Extra Services */}
-      <PaymentMethods />
+      {/* <PaymentMethods /> */}
 
       {/* Call to Action */}
       <CallToAction />
@@ -270,11 +273,11 @@ export default function App() {
                     label: "Yearly Plan",
                     color: "hover:text-teal-400",
                   },
-                  {
-                    href: "#payment",
-                    label: "Payment Method",
-                    color: "hover:text-amber-400",
-                  },
+                  // {
+                  //   href: "#payment",
+                  //   label: "Payment Method",
+                  //   color: "hover:text-amber-400",
+                  // },
                   {
                     href: "#nearby",
                     label: "Nearby",

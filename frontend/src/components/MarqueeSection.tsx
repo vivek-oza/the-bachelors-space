@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import marquee1 from "../assets/Marquee/marquee1.avif";
 import marquee2 from "../assets/Marquee/marquee2.avif";
+import { Building2 } from "lucide-react";
 
 export function MarqueeSection() {
   const images = [marquee1, marquee2];
@@ -22,7 +23,7 @@ export function MarqueeSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">🏢</span>
+            <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl"><Building2 /></span>
             <span className="font-medium font-body text-xs sm:text-sm md:text-base lg:text-base xl:text-xl 2xl:text-2xl">Our Facilities</span>
           </motion.div>
           <h2 className="text-4xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-purple-900 mb-4 lg:mb-6 font-heading">

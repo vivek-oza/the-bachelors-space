@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
+import { Camera, ChevronLeft, ChevronRight, Pause, Play, ZapIcon } from "lucide-react";
 
 // Import carousel images
 import img1 from "../assets/Carousel/1.webp";
@@ -106,11 +106,11 @@ export function ImageCarousel() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">📸</span>
-            <span className="font-medium font-body text-xs sm:text-sm md:text-base lg:text-base xl:text-xl 2xl:text-2xl">Gallery</span>
+            <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl"><ZapIcon  /></span>
+            <span className="font-medium font-body text-xs sm:text-sm md:text-base lg:text-base xl:text-xl 2xl:text-2xl">See Whats New</span>
           </motion.div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-purple-900 mb-4 lg:mb-6 font-heading">
-            Our Facilities
+            Updates
           </h2>
           <p className="text-base lg:text-lg xl:text-xl 2xl:text-2xl text-gray-600 max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto font-body">
             Take a virtual tour of our modern, well-equipped hostel facilities
