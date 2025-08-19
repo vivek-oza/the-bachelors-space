@@ -358,7 +358,7 @@ export function CallToAction() {
               </div>
 
               {/* Quick Stats */}
-              <div className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl shadow-lg p-6">
+              {/* <div className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl shadow-lg p-6">
                 <div className="grid grid-cols-2 gap-6 text-center">
                   <div>
                     <div className="text-3xl text-teal-600 mb-2 font-heading">
@@ -393,7 +393,7 @@ export function CallToAction() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </motion.div>
           </div>
 
