@@ -2,20 +2,15 @@
 
 import { motion } from "motion/react";
 import { Button } from "./ui/button";
-import img2 from "../assets/2.png";
-import img4 from "../assets/4.png";
-import img6 from "../assets/6.png";
-import img9 from "../assets/9.png";
+import img2 from "../assets/2.avif";
+import img4 from "../assets/4.avif";
+import img6 from "../assets/6.avif";
+import img9 from "../assets/9.avif";
 
 import {
-  Send,
   Phone,
-  Mail,
   MapPin,
   Star,
-  Users,
-  Calendar,
-  CheckCircle2,
 } from "lucide-react";
 import { useState } from "react";
 
