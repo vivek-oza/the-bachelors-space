@@ -253,7 +253,7 @@ export function CallToAction() {
               <div className="space-y-8 xl:space-y-12">
                 {/* Branch 1 Row */}
                 <div className="backdrop-blur rounded-3xl">
-                  <div className="grid md:grid-cols-2 gap-6 xl:gap-8">
+                  <div id="branch1-contact" className="grid md:grid-cols-2 gap-6 xl:gap-8">
                     {/* Branch 1 Contact Info */}
                     <div className="bg-white/95 backdrop-blur rounded-2xl shadow-lg p-6 xl:p-8 h-80 xl:h-96 flex flex-col">
                       <div className="text-xl xl:text-2xl text-purple-900 font-heading mb-4 xl:mb-6">
@@ -303,7 +303,7 @@ export function CallToAction() {
 
                 {/* Branch 2 Row */}
                 <div className="backdrop-blur rounded-3xl">
-                  <div className="grid md:grid-cols-2 gap-6 xl:gap-8">
+                  <div id="branch2-contact" className="grid md:grid-cols-2 gap-6 xl:gap-8">
                     {/* Branch 2 Contact Info */}
                     <div className="bg-white/95 backdrop-blur rounded-2xl shadow-lg p-6 xl:p-8 h-80 xl:h-96 flex flex-col">
                       <div className="text-xl xl:text-2xl 2xl:text-3xl text-purple-900 font-heading mb-3 xl:mb-5">

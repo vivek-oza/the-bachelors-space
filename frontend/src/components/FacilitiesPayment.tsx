@@ -48,8 +48,8 @@ const facilities = [
   },
   {
     icon: Zap,
-    name: "Utilities",
-    description: "Gym, Indoor Games, Library, Electricity, Water, and Essential services",
+    name: "Activites",
+    description: "Gym, Indoor Games, Library",
     color: "from-purple-400 to-purple-600",
   },
 ];

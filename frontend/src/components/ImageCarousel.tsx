@@ -92,7 +92,7 @@ export function ImageCarousel() {
   // }
 
   return (
-    <section className="w-full py-16 lg:py-16 xl:py-24 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+    <section id="updates" className="w-full py-16 lg:py-16 xl:py-24 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
       <div className="max-w-[2560px] mx-auto px-6 lg:px-8 xl:px-12 2xl:px-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

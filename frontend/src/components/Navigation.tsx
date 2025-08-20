@@ -5,11 +5,14 @@ import { motion } from "motion/react";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
 import logo from "../assets/logo.avif";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export function Navigation() {
   const [activeSection, setActiveSection] = useState("hero");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,9 +22,13 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Treat About page as always-scrolled to keep solid background
+  const scrolledOrAbout = isScrolled || location.pathname === "/about";
+
   const navItems = [
     { id: "facilities", label: "Facilities" },
     { id: "nearby", label: "Nearby" },
+    { id: "updates", label: "Updates" },
     { id: "monthly", label: "Monthly Plan" },
     { id: "yearly", label: "Yearly Plan" },
     // { id: "payment", label: "Payment" },
@@ -29,21 +36,79 @@ export function Navigation() {
     { id: "location", label: "Location" },
   ];
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const navHeight = 80;
-      const elementPosition = element.offsetTop - navHeight;
-      window.scrollTo({ top: elementPosition, behavior: "smooth" });
-      setActiveSection(sectionId);
-      setIsMobileMenuOpen(false);
+  const goHomeThen = (cb: () => void) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      // Wait longer for route change + render before attempting scroll
+      setTimeout(cb, 300);
+    } else {
+      cb();
     }
   };
+
+  const scrollToSection = (sectionId: string) => {
+    const navHeight = 80;
+    let attempts = 0;
+    const maxAttempts = 10;
+    const tryScroll = () => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const elementPosition = element.offsetTop - navHeight;
+        window.scrollTo({ top: elementPosition, behavior: "smooth" });
+        setActiveSection(sectionId);
+        setIsMobileMenuOpen(false);
+      } else if (attempts < maxAttempts) {
+        attempts++;
+        setTimeout(tryScroll, 100);
+      }
+    };
+    tryScroll();
+  };
+
+  const handleSectionNav = (sectionId: string) => {
+    goHomeThen(() => scrollToSection(sectionId));
+  };
+
+  // Observe sections to update active underline while scrolling
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      // On non-home routes, reflect route in activeSection
+      setActiveSection("about");
+      return;
+    }
+    const ids = ["facilities", "nearby", "updates", "monthly", "yearly", "location"];
+    const elements = ids
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => !!el);
+
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Choose the most visible entry
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible[0]?.target?.id) {
+          setActiveSection(visible[0].target.id);
+        }
+      },
+      {
+        root: null,
+        threshold: [0.2, 0.4, 0.6],
+        rootMargin: "-45% 0px -45% 0px",
+      }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, [location.pathname]);
 
   return (
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
-        isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+        scrolledOrAbout ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -58,7 +123,10 @@ export function Navigation() {
           >
             <img
               src={logo}
-              onClick={() => scrollToSection("hero")}
+              onClick={() => {
+                if (location.pathname !== "/") navigate("/");
+                else scrollToSection("hero");
+              }}
               alt="Logo"
               className="h-14 sm:h-15 lg:h-13.5 xl:h-24 rounded w-auto"
             />
@@ -69,13 +137,21 @@ export function Navigation() {
             {navItems.map((item, index) => (
               <motion.button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => {
+                  if (item.id === 'location') {
+                    navigate('/#branch1-contact');
+                    setIsMobileMenuOpen(false);
+                    setActiveSection('location');
+                  } else {
+                    handleSectionNav(item.id)
+                  }
+                }}
                 className={`text-xs sm:text-sm md:text-base6 lg:text-base xl:text-xl 2xl:text-2xl cursor-pointer font-medium transition-all duration-200 relative font-body ${
                   activeSection === item.id
-                    ? isScrolled
+                    ? scrolledOrAbout
                       ? "text-yellow-500"
                       : "text-yellow-400"
-                    : isScrolled
+                    : scrolledOrAbout
                     ? "text-gray-700 hover:text-yellow-500"
                     : "text-gray-200 hover:text-yellow-400"
                 }`}
@@ -83,7 +159,7 @@ export function Navigation() {
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
+                transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
               >
                 {item.label}
                 {activeSection === item.id && (
@@ -95,9 +171,38 @@ export function Navigation() {
                 )}
               </motion.button>
             ))}
+            {/* About next to Contact */}
+            <motion.button
+              onClick={() => {
+                navigate("/about");
+                setIsMobileMenuOpen(false);
+                setActiveSection('about');
+              }}
+              className={`text-xs sm:text-sm md:text-base6 lg:text-base xl:text-xl 2xl:text-2xl cursor-pointer font-medium transition-all duration-200 relative font-body ${
+                scrolledOrAbout ? "text-gray-700 hover:text-yellow-500" : "text-gray-200 hover:text-yellow-400"
+              }`}
+              whileHover={{ y: -2, scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.05 }}
+            >
+              About
+              {activeSection === 'about' && (
+                <motion.div
+                  className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-yellow-400 to-teal-400 rounded-full"
+                  layoutId="activeTab"
+                  transition={{ duration: 0.3 }}
+                />
+              )}
+            </motion.button>
+
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
-                onClick={() => scrollToSection("location")}
+                onClick={() => {
+                  navigate('/#location');
+                  setIsMobileMenuOpen(false);
+                }}
                 className="bg-gradient-to-r bg-yellow-500 hover:bg-yellow-400 text-white hover:text-indigo-800 px-5 py-1.5 lg:px-7 lg:py-2.5 xl:px-7 xl:py-7 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 font-body text-xs sm:text-sm md:text-base lg:text-base xl:text-xl 2xl:text-2xl"
               >
                 <motion.span
@@ -114,7 +219,7 @@ export function Navigation() {
           <motion.button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden p-2 rounded-lg ${
-              isScrolled ? "text-purple-900" : "text-white"
+              scrolledOrAbout ? "text-purple-900" : "text-white"
             }`}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -134,14 +239,35 @@ export function Navigation() {
               {navItems.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => {
+                    if (item.id === 'location') {
+                      navigate('/#branch1-contact');
+                      setIsMobileMenuOpen(false);
+                      setActiveSection('location');
+                    } else {
+                      handleSectionNav(item.id)
+                    }
+                  }}
                   className="block w-full text-left px-4 py-2 rounded-lg transition-colors font-body text-gray-700 hover:bg-gray-100 text-base sm:text-lg"
                 >
                   {item.label}
                 </button>
               ))}
+              {/* About near Contact */}
+              <button
+                onClick={() => {
+                  navigate("/about");
+                  setIsMobileMenuOpen(false);
+                }}
+                className="block w-full text-left px-4 py-2 rounded-lg transition-colors font-body text-gray-700 hover:bg-gray-100 text-base sm:text-lg"
+              >
+                About
+              </button>
               <Button
-                onClick={() => scrollToSection("location")}
+                onClick={() => {
+                  navigate('/#location');
+                  setIsMobileMenuOpen(false);
+                }}
                 className="w-full mt-2 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-purple-900 px-5 py-2 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 font-body text-base"
               >
                 Contact
