@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Navigation } from "./components/Navigation";
 import { HeroSection } from "./components/HeroSection";
 import { ImageCarousel } from "./components/ImageCarousel";
@@ -23,6 +25,29 @@ import img9 from "./assets/9.avif";
 import { PaymentNotice } from "./components/PaymentNotice";
 
 export default function App() {
+  const location = useLocation();
+
+  // Scroll to hash targets reliably after route/hash changes
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const navHeight = 80;
+      let attempts = 0;
+      const maxAttempts = 15;
+      const tryScroll = () => {
+        const el = document.getElementById(id);
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+          window.scrollTo({ top, behavior: "smooth" });
+        } else if (attempts < maxAttempts) {
+          attempts++;
+          setTimeout(tryScroll, 100);
+        }
+      };
+      // delay a bit to allow content to mount
+      setTimeout(tryScroll, 100);
+    }
+  }, [location]);
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -45,55 +70,7 @@ export default function App() {
       {/* Image Carousel */}
       <ImageCarousel />
 
-      {/* About Us */}
-      <section className="py-10 lg:py-28 xl:py-32 bg-gradient-to-br from-purple-50 via-blue-50 to-teal-50">
-        <div className="max-w-[2560px] mx-auto px-6 lg:px-8 xl:px-12 2xl:px-16">
-          <motion.div
-            className="text-center mb-4 lg:mb-8"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <motion.div
-              className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 lg:px-6 lg:py-3 rounded-full mb-4 lg:mb-6"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="text-lg lg:text-xl">🏡</span>
-              <span className="font-medium font-body text-sm lg:text-base">About Us</span>
-            </motion.div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-purple-900 mb-6 lg:mb-8 font-heading">
-              The Bachelor's Space
-            </h2>
-            <p className="text-lg lg:text-xl xl:text-2xl text-gray-600 max-w-3xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto font-body">
-              Gandhinagar's premium hostel and PG destination — where luxury
-              meets youth lifestyle.
-            </p>
-          </motion.div>
-
-          <div className="max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto ">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="space-y-6 lg:space-y-8 text-center"
-            >
-              <p className="text-lg lg:text-xl xl:text-2xl text-gray-700 leading-relaxed font-body">
-                Welcome to The Bachelor's Space, Gandhinagar's{" "}
-                <span className="font-semibold text-purple-600">
-                  premium hostel and PG destination
-                </span>{" "}
-                — where luxury meets youth lifestyle. Designed for students and
-                working professionals, TBS offers a balanced and vibrant living
-                experience with top-tier amenities, modern interiors, and a
-                community-driven atmosphere.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Monthly Plans */}
       <MonthlyPlans />
@@ -294,7 +271,7 @@ export default function App() {
                     color: "hover:text-blue-400",
                   },
                   {
-                    href: "#location",
+                    href: "#branch1-contact",
                     label: "Contact",
                     color: "hover:text-green-400",
                   },
@@ -317,7 +294,7 @@ export default function App() {
               </ul>
             </motion.div>
 
-            <motion.div
+            <motion.div id="location"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
