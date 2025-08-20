@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { Navigation } from "../components/Navigation";
+import { Footer } from "../components/Footer";
 
 export default function AboutPage() {
   return (
@@ -33,7 +34,7 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          <div className="max-w-7xl mx-auto">
+          <div className="mx-auto">
             {/* Key Stats Cards */}
             <motion.div
               className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 mb-12"
@@ -173,6 +174,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
