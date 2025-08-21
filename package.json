@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "cd frontend && npm run build",
+    "build:obf": "cd frontend && npm run build:obf",
     "dev": "cd frontend && npm run dev",
     "install-deps": "cd frontend && npm install"
   }
