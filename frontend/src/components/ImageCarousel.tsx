@@ -29,6 +29,7 @@ export function ImageCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [progress, setProgress] = useState(0);
+  const [direction, setDirection] = useState(1); // 1: next/right, -1: previous/left
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const progressRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -50,6 +51,7 @@ export function ImageCarousel() {
 
     // Slide change
     intervalRef.current = setInterval(() => {
+      setDirection(1);
       setCurrentIndex((prev) => (prev + 1) % carouselImages.length);
       setProgress(0);
     }, AUTOPLAY_DELAY);
@@ -73,17 +75,20 @@ export function ImageCarousel() {
   }, [isPlaying, currentIndex]);
 
   const goToSlide = (index: number) => {
+    setDirection(index > currentIndex ? 1 : index < currentIndex ? -1 : direction);
     setCurrentIndex(index);
     setProgress(0);
   };
 
   const goToPrevious = () => {
+    setDirection(-1);
     setCurrentIndex((prev) =>
       prev === 0 ? carouselImages.length - 1 : prev - 1
     );
   };
 
   const goToNext = () => {
+    setDirection(1);
     setCurrentIndex((prev) => (prev + 1) % carouselImages.length);
   };
 
@@ -106,7 +111,7 @@ export function ImageCarousel() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl"><ZapIcon  /></span>
+            <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl"><ZapIcon /></span>
             <span className="font-medium font-body text-xs sm:text-sm md:text-base lg:text-base xl:text-xl 2xl:text-2xl">See Whats New</span>
           </motion.div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-purple-900 mb-4 lg:mb-6 font-heading">
@@ -124,11 +129,11 @@ export function ImageCarousel() {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentIndex}
-                  initial={{ opacity: 0, scale: 1.1 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute inset-0 flex items-center justify-center"
+                  initial={{ x: direction > 0 ? "100%" : "-100%" }}
+                  animate={{ x: 0 }}
+                  exit={{ x: direction > 0 ? "-100%" : "100%" }}
+                  transition={{ duration: 0.45, ease: "linear" }}
+                  className="absolute inset-0 flex items-center justify-center px-10 sm:px-3 box-border p-1.5 sm:p-2 bg-transparent rounded-2xl shadow-md"
                 >
                   <img
                     src={carouselImages[currentIndex].src}
@@ -172,8 +177,8 @@ export function ImageCarousel() {
                         index === currentIndex
                           ? `${progress}%`
                           : index < currentIndex
-                          ? "100%"
-                          : "0%",
+                            ? "100%"
+                            : "0%",
                     }}
                     transition={{ duration: 0.1 }}
                   />
@@ -191,11 +196,10 @@ export function ImageCarousel() {
               <motion.button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`flex-shrink-0 relative rounded-lg overflow-hidden transition-all duration-300 ${
-                  index === currentIndex
+                className={`flex-shrink-0 relative rounded-lg overflow-hidden transition-all duration-300 ${index === currentIndex
                     ? "ring-4 ring-purple-500 scale-110"
                     : "hover:scale-105 opacity-70 hover:opacity-100"
-                }`}
+                  }`}
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >

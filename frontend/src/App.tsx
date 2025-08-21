@@ -39,7 +39,7 @@ export default function App() {
         }
       };
       // delay a bit to allow content to mount
-      setTimeout(tryScroll, 100);
+      setTimeout(tryScroll, 200);
     }
   }, [location]);
   return (
